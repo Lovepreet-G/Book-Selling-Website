@@ -1,0 +1,43 @@
+/*body head */
+#body-header
+{
+    height: 10vh;
+    border: 1px solid black;
+    background-color: rgb(9, 26, 73);
+    display: flex;
+    flex-direction: row;
+    min-height: 55px;
+
+}
+/* logo  */
+#body-header div
+{
+    flex-grow: 3;
+    
+}
+#body-header div img
+{   
+    height: 10rem;
+    width: 20rem;
+    margin-top: -3rem;
+}
+/* button container */
+#body-header span
+{
+    margin: auto;   
+    margin-left: -100px;
+    padding-right: 30px;
+}
+/* buttons */
+#signup ,#signin
+{
+    font-weight: 800;
+    color: white;
+    border: none;
+    background: none;
+}
+/* button signin border */
+#signin
+{
+    border-left: 1px solid white;
+}

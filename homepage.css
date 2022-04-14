@@ -1,43 +1,40 @@
 /*body head */
 #body-header
 {
-    height: 10vh;
-    border: 1px solid black;
     background-color: rgb(9, 26, 73);
     display: flex;
     flex-direction: row;
-    min-height: 55px;
-
+    height: 55px;
+    justify-content: space-between;
+    align-items: center;
 }
-/* logo  */
-#body-header div
+/* logo */
+#logo
 {
-    flex-grow: 3;
-    
-}
-#body-header div img
-{   
     height: 10rem;
     width: 20rem;
-    margin-top: -3rem;
+    
 }
-/* button container */
-#body-header span
+#logo img
 {
-    margin: auto;   
-    margin-left: -100px;
-    padding-right: 30px;
+    
+    height: 100%;
+    width: 100%;
 }
+
 /* buttons */
-#signup ,#signin
+#button
 {
-    font-weight: 800;
-    color: white;
+    width: 200px;
+}
+#signup,#signin
+{
     border: none;
     background: none;
+    color: aliceblue;
 }
-/* button signin border */
 #signin
 {
     border-left: 1px solid white;
 }
+

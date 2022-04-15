@@ -5,23 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Home</title>
 </head>
 <body>
     <header id="body-header">
-            <div id="logo">
-                <img src="resources/logo.png" alt="logo" >
-            </div>
-            <div id ="button">
-                <button id="signup">
-                    Sign up
-                </button>
-                <button id ="signin">
-                    Sign in
-                </button>
-            </div>
+        <!-- Logo -->
+        <div id="logo">
+            <img src="resources/logo.png" alt="logo" >
+        </div>
+        <!-- Sign in buttons -->
+        <div id ="button">
+            <button id="signup">
+                Sign up
+            </button>
+            <button id ="signin">
+                Sign in
+            </button>
+        </div>
+        <!-- search bar -->
+        <div id="search-bar">
+            <form class="example" action="action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
     </header>
-
-    
+    <!--navigation menu  -->
+    <div id="nav">  
+        <nav>
+            <ul class="horizontal-list nav-menu">
+                <li>
+                    <a href="#"  >Home</a>
+                </li>
+                <li>
+                    <a href="#">Science</a>
+                </li>
+                <li>
+                    <a href="#">Commerce</a>
+                </li>
+                <li>
+                    <a href="#">Arts</a>
+                </li>
+                <li>
+                    <a href="#">Fiction</a>
+                </li>
+                <li>
+                    <a href="#">Non-Fiction</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <section id="display">
+        <div id="display-area">
+            dfdf
+        </div>
+    </section>
 </body>
 </html>

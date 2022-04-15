@@ -23,6 +23,7 @@
 {
     
     height: 100%;
+    min-width: 12rem;
     width: 100%;
 }
 
@@ -108,7 +109,7 @@
     float: left;
     width: 20%;
     height: 2rem;
-    padding: 7px;
+    padding: 1px;
     background: #f7971e;
     color: white;
     font-size: 17px;
@@ -119,7 +120,8 @@
   }
   
   form.example button:hover {
-    background: #0b7dda;
+    
+    box-shadow: 0px 1px 5px 1px #b9b9b9 ;
   }
   
   /* Clear floats */
@@ -143,20 +145,31 @@
   /* display area */
   #display
   {
-    margin-top: -16px;
-    background-image: url(back.jpg) ;
+    margin-top: -1px;
+    background-image: url(resources/back.jpg) ;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
     opacity: 0.85;
-    padding-top: 10px;
+    padding-top: 20px;
   }
   #display-area
   {
-      width: 70%;
-      height: 1000px;
-      /* background-color: #999999; */
-      border: 1px dotted black;
-      margin: auto;
-      padding: 50px;
+    width: 90%;
+    height: auto;
+    background-color: white;    
+    margin: auto;
+    background: transparent;
+    border-radius: 20px;
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;            
   }
+  .card
+  {
+    padding: 10px;
+    margin: 5px;
+    background: none ;   
+  }
+  

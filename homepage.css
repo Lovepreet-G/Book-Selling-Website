@@ -100,6 +100,7 @@
     width: 80%;
     height: 2rem;
     background: #f1f1f1;
+    border-radius: 10px;
   }
   
   /* Style the submit button */
@@ -114,6 +115,7 @@
     border: 1px solid grey;
     border-left: none; /* Prevent double borders */
     cursor: pointer;
+    border-radius: 10px;
   }
   
   form.example button:hover {

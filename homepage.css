@@ -7,13 +7,17 @@
     height: 55px;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    position:sticky;
+    top: .000001px;
+    z-index: 2;
 }
 /* logo */
 #logo
 {
     height: 10rem;
-    width: 20rem;
-    
+    width: 15rem;
+    order: 0;
 }
 #logo img
 {
@@ -24,7 +28,8 @@
 
 /* buttons */
 #button
-{
+{   
+    order: 3;
     width: 200px;
 }
 #signup,#signin
@@ -38,3 +43,117 @@
     border-left: 1px solid white;
 }
 
+
+/* navigation menu */
+#nav
+{   
+    position:sticky;
+    top: 55px;
+    z-index: 1;
+    background-color: rgb(9, 26, 73);
+    margin-top: -2.5vh;
+}
+.horizontal-list
+{
+    list-style: none;
+    padding: 0px;
+    text-align: center;
+    position: relative;
+    
+}
+.horizontal-list li 
+{
+    display: inline-block;
+    margin: 10px 10px 10px 0px;
+   
+}
+
+.horizontal-list li a
+{
+    color: aliceblue;
+    text-decoration: none;
+    transition: color 1s, border-bottom 3s ;
+    
+    
+}
+.nav-menu li a:hover
+{
+    color: #f7971e;
+    border-bottom: 1px solid #f7971e;
+    
+}
+/* search bar */
+*{
+    box-sizing: border-box;
+  }
+  #search-bar
+  {
+      margin-left: -10vh;
+  }
+  
+  /* Style the search field */
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    height: 2rem;
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 20%;
+    height: 2rem;
+    padding: 7px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  /* to change position when screen shriks */
+  @media screen and (max-width:800px) 
+  {
+    #search-bar
+    {
+        margin-top: 80px;
+    }
+    #nav
+    {
+        padding-top: 30px;
+    }
+  }
+  /* display area */
+  #display
+  {
+    margin-top: -16px;
+    background-image: url(back.jpg) ;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.85;
+    padding-top: 10px;
+  }
+  #display-area
+  {
+      width: 70%;
+      height: 1000px;
+      background-color: gray;
+      margin: auto;
+      padding: 50px;
+  }

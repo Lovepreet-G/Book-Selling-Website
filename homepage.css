@@ -148,7 +148,7 @@
     margin-top: -1px;
     background-image: url(resources/back.jpg) ;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover; 
     background-position: center;
     opacity: 0.85;
     padding-top: 20px;
@@ -166,6 +166,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;            
   }
+  /* card padding */
   .card
   {
     padding: 10px;
@@ -173,3 +174,107 @@
     background: none ;   
   }
   
+  /* Contact section */
+  /* centering the heading */
+  .section-heading
+{
+    width: auto;
+    padding: 20px 10px 10px;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+}
+/* #contact .section-heading span
+{
+    color: white;
+} */
+/* background color */
+#contact
+{
+    background-color: rgb(86 86 86);   
+}
+
+#contact #contact-container
+{
+    display: flex;
+    margin-top: 20px;
+}
+#contact-form 
+{
+    width: 50%; 
+}
+#contact-form form
+{
+    margin-left: 20%;
+}
+#contact-details
+{
+    width: 35%;
+    margin-left: 6%;
+    color: white;
+}
+#contact-details h3 {
+    
+    font-weight: 550;
+    font-size: 1.2rem;
+}
+#contact-details p {
+    /* color: #d9dcdd; */
+    font-size: 0.9rem;
+}
+.my-address-info {
+    margin-bottom: 20px;
+    /* color: #d9dcdd; */
+    font-size: 1rem;
+}
+
+/* .my-address-info span {
+    margin-left: 0.4rem;
+} */
+
+.my-address-info i {
+    color: white;
+}
+/* Styling form inputs  */
+#contact-form input, textarea {
+    max-width: 90%;
+    margin-top: 10px;
+    padding: 4px 10px;
+    border: 0px solid transparent;
+    border-bottom: 2px solid white;
+    color: #d9dcdd;
+    background: transparent;
+    width: 90%;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+/* styling submit button of form */
+#contact-form button[type="submit"] {
+    background: transparent;
+    font-size: 0.95rem;
+    border: 2px solid white;
+    margin-top: 5%;
+    margin-left: 35%;
+    border-radius: 2px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.046875em;
+    line-height: 1;
+    padding: 0.8em 0.8em 0.78em;
+    text-transform: uppercase;
+}
+/* changing color of button on hover */
+#contact-form button[type="submit"]:hover
+{
+    background-color: white;
+    color: rgb(86 86 86);    
+}
+/* removing outline of intput boxes */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+    
+}

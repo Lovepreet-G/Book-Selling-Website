@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="homepage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/624437a27c.js" crossorigin="anonymous"></script>
     <title>Home</title>
 </head>
 <body>
@@ -55,13 +56,15 @@
                     <a href="#">Non-Fiction</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="#contact">Contact</a>
                 </li>
             </ul>
         </nav>
     </div>
+    <!-- Display -->
     <section id="display">
         <div id="display-area">
+            <!-- Book display card -->
             <div id="display-card">
                 <Div class="card " style="width: 18rem;">
                     <img src="resources/cc.jpg" alt="image">
@@ -143,6 +146,81 @@
                 </Div>
             </div>
         </div>
+    </section>
+    <!-- contact                       -->
+    <section id="contact">
+        <!-- contact heading -->
+        <H1 class="section-heading mb75px">
+            <span>
+                <i class="far fa-address-card"></i>
+            </span>
+            <span>
+                Contact
+            </span>
+        </H1>
+        <div id="contact-container" >
+            <!-- contact form -->
+            <div id="contact-form">
+                <form action="">
+                    <input type="text" id="input-name" placeholder="Your Name"><br>
+                    <input type="text" id="input-email" placeholder="Email" ><br>
+                    <textarea name="input-message" id="input-message" cols="40" rows="2" placeholder="Meassage"></textarea><br>
+                    <button type="submit" id="sub-button">Send Meassage </button>
+                </form>
+            </div>
+            <!-- contact details -->
+            <div id="contact-details">
+                <h3>Get In touch</h3>
+                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <h3>My Address</h3>
+                <div class="my-address-info">
+                    <span>
+                        <i class="fas fa-map-marker-alt"></i>
+                    </span>
+                    <span>
+                        Punjab,India
+                    </span>
+                </div>
+
+                <div class="my-address-info">
+                    <span>
+                        <i class="fas fa-mobile-alt"></i>
+                    </span>
+                    <span>
+                        9130269066
+                    </span>
+                </div>
+
+                <div class="my-address-info">
+                    <span>
+                        <i class="far fa-envelope"></i>
+                    </span>
+                    <span>
+                        gillpreetsingh35@gmail.com
+                    </span>
+                </div>
+
+            </div>
+        </div>     
+            <!-- contact icons -->
+            <div id="contact-icons">
+                <ul class="horizontal-list social-icon">
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCA_1xtOdv66q0pdbRFDfsBA" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/lovepreet_singh35/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://discord.gg/g7fwhwT4" target="_blank"><i class="fab fa-discord"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </li>
+                    
+                </ul> 
+            </div>
+            
     </section>
     <script src="js/bootstrap.js"></script>
 </body>

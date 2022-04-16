@@ -150,6 +150,7 @@
     background-attachment: fixed;
     background-size: cover; 
     background-position: center;
+    background-color: #b9b9b9;
     opacity: 0.85;
     padding-top: 20px;
   }
@@ -171,7 +172,24 @@
   {
     padding: 10px;
     margin: 5px;
-    background: none ;   
+    background: none ;
+    max-height: 400px;  
+    align-items: center; 
+  }
+  .card:hover
+  {
+    box-shadow: 1px 1px 2px 1px gray inset;
+    transform: scale(1.05);
+  }
+  .card img
+   {
+        max-width: 200px;
+        max-height: 250px;
+        align-items: center;
+  }
+  .card-body
+  {
+    margin-top: -10px;
   }
   
   /* Contact section */

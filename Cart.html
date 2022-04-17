@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Cart.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"> -->
+    <!-- <script src="https://kit.fontawesome.com/2f4f51ac37.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/624437a27c.js" crossorigin="anonymous"></script>
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <header id="body-header">
+        <!-- Logo -->
+        <div id="logo">
+            <img src="resources/logo.png" alt="logo" >
+        </div>
+        <!-- Sign in buttons -->
+        <div id ="button">
+            <button id="signup">
+                Sign up
+            </button>
+            <button id ="signin">
+                Sign in
+            </button>
+        </div>
+        <!-- search bar -->
+        <div id="search-bar">
+            <form class="example" action="action_page.php">
+                <input type="text" placeholder="Search.." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </header>
+    <!--navigation menu  -->
+    <div id="nav">  
+        <nav>
+            <ul class="horizontal-list nav-menu">
+                <li>
+                    <a href="#"  >Home</a>
+                </li>
+                <li>
+                    <a href="#">Science</a>
+                </li>
+                <li>
+                    <a href="#">Commerce</a>
+                </li>
+                <li>
+                    <a href="#">Arts</a>
+                </li>
+                <li>
+                    <a href="#">Fiction</a>
+                </li>
+                <li>
+                    <a href="#">Non-Fiction</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!-- shopping cart -->
+    <div class="container">
+        <h1>Shopping Cart</h1>
+        <div class="cart">
+            <div class="products">
+                <div class="product">
+                    <img src="resources/cc.jpg" alt="">
+                    <div class="product-info">
+                        <h3 class="product-name">Compiler construction</h3>
+                        <h4 class="product-price">$500</h4>
+                        <h4 class="product-offer">50%</h4>
+                        <p class="product-quantity">Qnt : <input type="number" value="1" name="">
+                            <p class="product-remove">
+                                
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                <span class="remove">Remove</span>
+
+                            </p>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img src="resources/cc.jpg" alt="">
+                    <div class="product-info">
+                        <h3 class="product-name">Compiler construction</h3>
+                        <h4 class="product-price">$500</h4>
+                        <h4 class="product-offer">50%</h4>
+                        <p class="product-quantity">Qnt : <input type ="number" value="1" name="">
+                            <p class="product-remove">
+                                
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                <span class="remove">Remove</span>
+
+                            </p>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-total">
+                <p>
+                    <span>Total Price</span>
+                    <span>$1000</span>
+                </p>
+                <p>
+                    <span>Total items</span>
+                    <span>2</span>
+                </p>
+                <p>
+                    <span>You save</span>
+                    <span>$100</span>
+                </p>
+                <a href="#">Proceed to checkout</a>
+            </div>
+        </div>
+    </div>
+       <!-- contact                       -->
+    <section id="contact">
+        <!-- contact heading -->
+        <H1 class="section-heading mb75px">
+            <span>
+                <i class="far fa-address-card"></i>
+            </span>
+            <span>
+                Contact
+            </span>
+        </H1>
+        <div id="contact-container" >
+            <!-- contact form -->
+            <div id="contact-form">
+                <form action="">
+                    <input type="text" id="input-name" placeholder="Your Name"><br>
+                    <input type="text" id="input-email" placeholder="Email" ><br>
+                    <textarea name="input-message" id="input-message" cols="40" rows="2" placeholder="Meassage"></textarea><br>
+                    <button type="submit" id="sub-button">Send Meassage </button>
+                </form>
+            </div>
+            <!-- contact details -->
+            <div id="contact-details">
+                <h3>Get In touch</h3>
+                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <h3>My Address</h3>
+                <div class="my-address-info">
+                    <span>
+                        <i class="fas fa-map-marker-alt"></i>
+                    </span>
+                    <span>
+                        Punjab,India
+                    </span>
+                </div>
+
+                <div class="my-address-info">
+                    <span>
+                        <i class="fas fa-mobile-alt"></i>
+                    </span>
+                    <span>
+                        9130269066
+                    </span>
+                </div>
+
+                <div class="my-address-info">
+                    <span>
+                        <i class="far fa-envelope"></i>
+                    </span>
+                    <span>
+                        gillpreetsingh35@gmail.com
+                    </span>
+                </div>
+
+            </div>
+        </div>     
+            <!-- contact icons -->
+            <div id="contact-icons">
+                <ul class="horizontal-list social-icon">
+                    <li>
+                        <a href="https://www.youtube.com/channel/UCA_1xtOdv66q0pdbRFDfsBA" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/lovepreet_singh35/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="https://discord.gg/g7fwhwT4" target="_blank"><i class="fab fa-discord"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </li>
+                    
+                </ul> 
+            </div>
+            
+    </section>
+    
+</section>
+</body>
+</html>

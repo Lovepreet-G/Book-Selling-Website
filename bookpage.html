@@ -62,7 +62,39 @@
         </nav>
     </div>
     <!-- Display -->
-    <section id="display">
+    <section id="display" class="container my-5 pt-5">
+        <div class="row ">
+            <div id="book-img" class="col-lg-5 col-md-12 col-12">
+                <img class="img-fluid w-100 pd-1" src="resources/cc.jpg" id="main-img" alt="image">
+
+                <div class="small-img-group">
+                    <div class="small-img-col">
+                        <img class="small-img" src="resources/web.jpg" width="100%" alt="image">
+                    </div>
+                    <div class="small-img-col">
+                        <img class="small-img" src="resources/cc.jpg" width="100%" alt="image">
+                    </div>
+                    <div class="small-img-col">
+                        <img class="small-img" src="resources/cc.jpg" width="100%" alt="image">
+                    </div>
+                    <div class="small-img-col">
+                        <img class="small-img" src="resources/cc.jpg" width="100%" alt="image">
+                    </div>
+                </div>
+            </div>        
+            <div id="book-details" class="col-lg-6 col-md-12 col-12">
+                    <h6>book</h6>
+                    <h3 class="py-3"> Compiler Construction</h3>
+                    <h3 class="mb-3">$10</h3>
+                    <button class="btn btn-primary">Add to cart</button>
+                    <h4 class="mt-4 mb-3">Book Details </h4>
+                    <span>
+                        TY Bcs <br> Publishing Year :- 2022br
+                        <br>sd<br>sd<br>sd<br>sd<br>sd<br>sd<br>ds<br><br><br><br><br>
+                    </span>
+
+            </div>
+        </div>
         
             <!-- <div id="display-card">
                 <Div class="card " style="width: 18rem;">
@@ -152,5 +184,25 @@
             
     </section>
     <script src="js/bootstrap.js"></script>
+    <script>
+        var mainimg=document.getElementById("main-img");
+        var smallimg =document.getElementsByClassName("small-img");
+        smallimg[0].onclick =function(){
+            mainimg.src = smallimg[0].src;        
+        }
+        smallimg[1].onclick =function(){
+            mainimg.src = smallimg[1].src;        
+        }
+        smallimg[2].onclick =function(){
+            mainimg.src = smallimg[2].src;        
+        }
+        smallimg[3].onclick =function(){
+            mainimg.src = smallimg[3].src;        
+        }
+        smallimg[4].onclick =function(){
+            mainimg.src = smallimg[4].src;        
+        }
+
+    </script>
 </body>
 </html>

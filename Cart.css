@@ -1,0 +1,396 @@
+/*body head */
+#body-header
+{
+    background-color: rgb(86 86 86);
+    display: flex;
+    flex-direction: row;
+    height: 55px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    position:sticky;
+    top: .000001px;
+    z-index: 2;
+}
+/* logo */
+#logo
+{
+    height: 10rem;
+    width: 15rem;
+    order: 0;
+}
+#logo img
+{
+    
+    height: 100%;
+    min-width: 12rem;
+    width: 100%;
+}
+
+/* buttons */
+#button
+{   
+    order: 3;
+    width: 200px;
+}
+#signup,#signin
+{
+    border: none;
+    background: none;
+    color: aliceblue;
+}
+#signin
+{
+    border-left: 1px solid white;
+}
+
+
+/* navigation menu */
+#nav
+{   
+    position:sticky;
+    top: 55px;
+    z-index: 1;
+    background-color: rgb(86 86 86);
+    margin-top: -2.5vh;
+}
+.horizontal-list
+{
+    list-style: none;
+    padding: 0px;
+    text-align: center;
+    position: relative;
+    
+}
+.horizontal-list li 
+{
+    display: inline-block;
+    margin: 10px 10px 10px 0px;
+   
+}
+
+.horizontal-list li a
+{
+    color: aliceblue;
+    text-decoration: none;
+    transition: color 1s, border-bottom 3s ;
+    
+    
+}
+.nav-menu li a:hover
+{
+    color: #f7971e;
+    border-bottom: 1px solid #f7971e;
+    
+}
+/* search bar */
+*{
+    box-sizing: border-box;
+  }
+  #search-bar
+  {
+      margin-left: -10vh;
+  }
+  
+  /* Style the search field */
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    height: 2rem;
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 20%;
+    height: 2rem;
+    padding: 1px;
+    background: #f7971e;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  form.example button:hover {
+    
+    box-shadow: 0px 1px 5px 1px #b9b9b9 ;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  /* to change position when screen shriks */
+  @media screen and (max-width:800px) 
+  {
+    #search-bar
+    {
+        margin-top: 80px;
+    }
+    #nav
+    {
+        padding-top: 30px;
+    }
+  }
+ /* shopping cart section */
+ 
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+.container > h1{
+    padding: 20px 0;
+    text-align: center;
+
+}
+.container > h3,h4{
+    margin: 0px;
+}
+.product > p{
+    margin: 0px;
+    padding: 0px;
+}
+.cart{
+    display: flex;
+
+}
+.products{
+    flex: 0.75;
+}
+.product{
+    display: flex;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid silver;
+    margin-bottom: 20px;
+}
+.product:hover{
+    border:none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01);
+}
+.product > img{
+    /* width: 300px;
+    height: 200px; */
+    object-fit: cover;
+    height: 150px;
+    width: 200px;
+    align-items: center;
+    margin: auto;
+}
+.product > img:hover{
+    transform: scale(1.04);
+
+}
+.product-info{
+    padding: 0px;
+    width: 100%;
+    position: relative;
+
+}
+.product-name, .product-price, .product-offer{
+    margin-bottom: 10px;
+}
+.product-remove{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 25px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.product-remove:hover{
+    background-color: white;
+    color: green;
+    font-weight: 600;
+    border: 1px solid green;
+}
+.product-quantity > input{
+    width: 40px;
+    padding: 5px;
+    text-align: center;
+}
+.fa{
+    margin-right: 5px;
+}
+.cart-total{
+    flex: 0.25;
+    margin-left: 20px;
+    padding: 20px;
+    height: 240px;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+.cart-total p{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-size: 20px;
+
+}
+.cart-total a{
+    display: block;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    background-color: tomato;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.cart-total a:hover{
+    background-color: red;
+
+}
+@media screen and (max-width: 700px){
+    .remove{
+        display: none;
+
+    }
+    .product{
+        height: 150px;
+    }
+    .product > img{
+        height: 150px;
+        width: 200px;
+    }
+    .product-name, .product-price, .product-offer{
+        margin-bottom: 10px;
+    }
+
+}
+@media screen and (max-width: 900px) {
+    .cart{
+        flex-direction: column;
+    }
+    .cart-total{
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    
+}
+@media screen and (max-width:1220px) {
+    .container{
+        max-width: 95%;
+    }
+    
+}
+
+ /* Contact section */
+  /* centering the heading */
+  .section-heading
+{
+    width: auto;
+    padding: 20px 10px 10px;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+}
+/* #contact .section-heading span
+{
+    color: white;
+} */
+/* background color */
+#contact
+{
+    background-color: rgb(86 86 86);   
+}
+
+#contact #contact-container
+{
+    display: flex;
+    margin-top: 20px;
+}
+#contact-form 
+{
+    width: 50%; 
+}
+#contact-form form
+{
+    margin-left: 20%;
+}
+#contact-details
+{
+    width: 35%;
+    margin-left: 6%;
+    color: white;
+}
+#contact-details h3 {
+    
+    font-weight: 550;
+    font-size: 1.2rem;
+}
+#contact-details p {
+    /* color: #d9dcdd; */
+    font-size: 0.9rem;
+}
+.my-address-info {
+    margin-bottom: 20px;
+    /* color: #d9dcdd; */
+    font-size: 1rem;
+}
+
+/* .my-address-info span {
+    margin-left: 0.4rem;
+} */
+
+.my-address-info i {
+    color: white;
+}
+/* Styling form inputs  */
+#contact-form input, textarea {
+    max-width: 90%;
+    margin-top: 10px;
+    padding: 4px 10px;
+    border: 0px solid transparent;
+    border-bottom: 2px solid white;
+    color: #d9dcdd;
+    background: transparent;
+    width: 90%;
+    line-height: 1.6;
+    font-size: 1.05rem;
+}
+/* styling submit button of form */
+#contact-form button[type="submit"] {
+    background: transparent;
+    font-size: 0.95rem;
+    border: 2px solid white;
+    margin-top: 5%;
+    margin-left: 35%;
+    border-radius: 2px;
+    color: white;
+    font-family: sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.046875em;
+    line-height: 1;
+    padding: 0.8em 0.8em 0.78em;
+    text-transform: uppercase;
+}
+/* changing color of button on hover */
+#contact-form button[type="submit"]:hover
+{
+    background-color: white;
+    color: rgb(86 86 86);    
+}
+/* removing outline of intput boxes */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+    
+}

@@ -6,6 +6,7 @@
     flex-direction: row;
     height: 55px;
     justify-content: space-between;
+    
     align-items: center;
     position: relative;
     position:sticky;
@@ -15,8 +16,9 @@
 /* logo */
 #logo
 {
+    
     height: 10rem;
-    width: 15rem;
+    width: 10rem;
     order: 0;
 }
 #logo img
@@ -24,7 +26,7 @@
     
     height: 100%;
     min-width: 12rem;
-    width: 100%;
+    width: 150%;
 }
 
 /* buttons */
@@ -35,13 +37,16 @@
 }
 #signup,#signin
 {
+    width: 35%;
+    align-items: center;
     border: none;
     background: none;
     color: aliceblue;
 }
 #signin
 {
-    border-left: 1px solid white;
+    border: 1px solid white;
+    border-radius: 5px;
 }
 
 
@@ -87,10 +92,14 @@
 *{
 box-sizing: border-box;
 }
-#search-bar
+ #search-bar
 {
-    margin-left: -10vh;
-}
+
+    /* margin-left: -10vh;  */
+    width: 200px;
+    
+    
+} 
 
 /* Style the search field */
 form.example input[type=text] 
@@ -139,51 +148,24 @@ form.example::after
     #search-bar
     {
         margin-top: 80px;
+        left: 10vh;
     }
     #nav
     {
         padding-top: 30px;
     }
+    #signup,#signin
+    {
+        width: 42%;
+    }
 }
-
 /* book area */
-/* #display
-{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 90%;
-    justify-content: center;
-    margin: auto;
-    padding: 10px;
-    height: auto;
-    background-color: #f7971e;
-}
-#book-img
-{   
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row ;
-    justify-items: flex-start;
-    width: auto;
-    height: auto;
-    background-color: #d9dcdd;
-    padding: 10px;
-}
-#book-img img
-{   
-    height: auto;
-    width: 100%;
-    margin: auto;
-}
-#book-details
-{
-    width: 600px;
-    height: 800px;
-    background-color: aqua;
-} */
 
 /* book img */
+#book-details h6
+{
+    color: #a59f9f;
+}
 .small-img-group
 {
     display: flex;
@@ -194,29 +176,18 @@ form.example::after
     flex-basis: 24%;
     cursor: pointer;
 }
-#book-details .btn
+#book-details #cart-btn
+{
+    background-color: white;
+    border: 1px solid #f7971e;
+    color: #f7971e;
+}
+#buy-btn
 {
     background-color: #f7971e;
     border: none;
+    cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   /* Contact section */
   /* centering the heading */

@@ -30,6 +30,7 @@
 
 /* body of sign page */
 body{
+    display: grid;
     margin: 0;
     padding: 0;
     font-family: montserrat;
@@ -173,4 +174,11 @@ input[type="submit"]:hover{
 }
 .signup_link a:hover{
     text-decoration: underline;
+}
+@media only screen and (max-width: 450px)
+{
+    .center
+    {
+        width: 350px;
+    }
 }

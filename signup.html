@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="login_page.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <style>
+        html { overflow-y: scroll;}
+
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        .center {
+            margin-top: 70px;
+        }
+    </style>
+</head> 
+<body>
+    <header id="body-header">
+        <!-- Logo -->
+        <div id="logo">
+            <img src="resources/logo.png" alt="logo" >
+        </div>
+    </header>
+
+    <div id="sign_up_form" class="center">
+        <h1>Sign Up</h1>
+        <form action="signup.php" method="post">
+            <div class="row">
+                <div class="txt_field">
+                    <input type="text" name="name" id="name" class="info" required>
+                    <span></span>
+                    <label>Enter your Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="txt_field">
+                    <input type="email" name="email" id="email" class="info" required>
+                    <span></span>
+                    <label>Enter your E-mail</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="txt_field">
+                        <input type="number" name="mobile_number" id="mobile_number" class="info" maxlength="10" required>
+                        <span></span>
+                        <label>Enter Mobile Number</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="txt_field">
+                        <input type="password" name="password" id="password" class="info" required>
+                        <span></span>
+                        <label>Enter Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="txt_field">
+                        <input type="password" name="password" id="c_password" class="info" required>
+                        <span></span>
+                        <label>Confirm Password</label>
+                </div>
+            </div>
+            <div class="row">
+                    <input type="submit" value="Sign Up" class="btn">
+                    <input type="reset" value="Reset" class="btn">
+                <div class="signin_link">
+                    Already have an account? <a href="login_page.html">Sign in</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

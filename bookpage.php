@@ -1,3 +1,41 @@
+<?php
+    $conn=pg_connect("host = localhost dbname= postgres user= postgres password= bookwebsite ") or die (preg_last_error());
+
+    $query = "select * from user_book_table";
+
+    $result= pg_query($conn,$query) or die (preg_last_error());
+
+    if(isset($_GET['id'])){
+        $book_id = $_GET['id']; 
+        
+    }
+    while ($row =pg_fetch_row($result) )
+    {
+        if($row[0]==$book_id)
+        {
+            $book_name=$row[1];
+            $book_price=$row[4];
+            $course=$row[9];
+            $pub_year=$row[6];
+            $seller_id=$row[11];
+        }
+    }
+
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,17 +124,17 @@
             </div>        
             <div id="book-details" class="col-lg-6 col-md-12 col-12">
                     <h6>book</h6>
-                    <h3 class="py-3"> Compiler Construction</h3>
-                    <h3 class="mb-3">$10</h3>
+                    <h3 class="py-3"><?php echo $book_name; ?></h3>
+                    <h3 class="mb-3"><?php echo $book_price; ?></h3>
                     <button id="cart-btn" class="btn btn-primary">Add to cart</button>
                     <button id="buy-btn" class="btn btn-primary">Buy Now</button>
                     <h4 class="mt-4 mb-3">Book Details </h4>
                     <span>
-                        TY Bcs <br> Publishing Year :- 2022
+                    <?php echo $course; ?> <br> Publishing Year :- <?php echo $pub_year; ?>
                     </span>
                     <h4 class="mt-4 mb-3">Seller Information </h4>
                     <span>
-                        Lovepreet Singh <br> Pune
+                    <?php echo $seller_id; ?>
                     </span>
 
 

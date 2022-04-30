@@ -1,4 +1,9 @@
 <?php
+
+    session_start();
+
+    $user_id=$_SESSION["user_id"];
+
     $conn=pg_connect("host = localhost dbname= postgres user= postgres password= bookwebsite ") or die (preg_last_error());
 
     $search =ucwords($_GET["search"]);
@@ -50,22 +55,66 @@
         <div id="logo">
             <img src="resources/logo.png" alt="logo" >
         </div>
-        <!-- Sign in buttons -->
-        <div id ="button">
-            <button id="signup">
-                Sign up
-            </button>
-            <button id ="signin">
-                Sign in
-            </button>
-        </div>
-        <!-- search bar -->
-        <div id="search-bar">
+           <!-- search bar -->
+           <div id="search-bar">
             <form class="example" action="searchpage.php" method="get">
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
+        <!-- Sign in buttons -->
+        <?php
+        
+        if($user_id==null)
+        {  
+            echo '<div id ="button">';
+            echo '<button id="signup">';
+            echo  '   Sign up';
+            echo '</button>';
+            echo '<button id ="signin">';
+            echo  '   Sign in';
+            echo '</button>';
+            echo '</div>';
+        }
+        else        
+       {
+        
+        echo '<div class="wrapper">';
+        echo  '  <div class="navbar">';
+    
+        echo  '   <div class="nav_right">';
+        echo   '         <ul>';
+        echo    '            <li class="nr_li dd_main">';
+        echo     '               <!-- <img src="profile_pic.png" alt="profile_img"> -->';
+        echo     '              Lovepreet';
+                       
+        echo      '              <div class="dd_menu">';
+        echo       '                 <div class="dd_left">';
+        echo        '                    <ul>';
+        echo         '                       <li><i class="fas fa-map-marker-alt"></i></li>';
+        echo          '                      <li><i class="far fa-star"></i></li>';
+        echo           '                     <li><i class="fas fa-download"></i></li>';								
+        echo            '                    <li><i class="fas fa-sign-out-alt"></i></li>';
+        echo             '               </ul>';
+        echo              '          </div>';
+        echo               '         <div class="dd_right">';
+        echo                '            <ul>';
+        echo                 '               <li>Your Profile</li>';
+        echo                  '              <li>Your Books</li>';
+        echo                   '             <li>Your Order</li>';
+        echo                    '            <li>Logout</li>';
+        echo                     '       </ul>';
+        echo                      '  </div>';
+        echo   '                 </div>';
+        echo    '            </li>';
+    
+        echo      '      </ul>';
+        echo       ' </div>';
+        echo '   </div>';
+        echo '</div>	';
+       }
+    ?>
+     
     </header>
     <!--navigation menu  -->
     <div id="nav">  

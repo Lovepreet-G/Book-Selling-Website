@@ -106,19 +106,19 @@
                     <a href="#"  >Home</a>
                 </li>
                 <li>
-                    <a href="#">Science</a>
+                    <a href="category.php?cat=Science">Science</a>
                 </li>
                 <li>
-                    <a href="#">Commerce</a>
+                    <a href="category.php?cat=Commerce">Commerce</a>
                 </li>
                 <li>
-                    <a href="#">Arts</a>
+                    <a href="category.php?cat=Arts">Arts</a>
                 </li>
                 <li>
-                    <a href="#">Fiction</a>
+                    <a href="category.php?cat=Fiction">Fiction</a>
                 </li>
                 <li>
-                    <a href="#">Non-Fiction</a>
+                    <a href="category.php?cat=Non-Fiction">Non-Fiction</a>
                 </li>
                 <li>
                     <a href="#contact">Contact</a>

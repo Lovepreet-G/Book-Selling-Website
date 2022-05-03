@@ -6,15 +6,30 @@
 
     $conn=pg_connect("host = localhost dbname= postgres user= postgres password= bookwebsite ") or die (preg_last_error());
 
-    $query = "select * from user_book_table";
+    if(isset($user_id))
+    {
+        $query ="select * from user_table";
 
-    $result= pg_query($conn,$query) or die (preg_last_error());
+        $result= pg_query($conn,$query) or die (preg_last_error());
+        while ($row =pg_fetch_row($result) )
+        {
+            if($row[0]==$user_id)
+            {
+                $user_name=$row[1];
+            }
+        }
+    }
+
+
+    $query1 = "select * from user_book_table";
+
+    $result1= pg_query($conn,$query1) or die (preg_last_error());
 
     if(isset($_GET['id'])){
         $book_id = $_GET['id']; 
         
     }
-    while ($row =pg_fetch_row($result) )
+    while ($row =pg_fetch_row($result1) )
     {
         if($row[0]==$book_id)
         {
@@ -61,7 +76,7 @@
         </div>
           <!-- search bar -->
           <div id="search-bar">
-            <form class="example" action="action_page.php">
+            <form class="example" action="searchpage.php" method ="get">
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
@@ -91,7 +106,7 @@
         echo   '         <ul>';
         echo    '            <li class="nr_li dd_main">';
         echo     '               <!-- <img src="profile_pic.png" alt="profile_img"> -->';
-        echo     '              Lovepreet';
+        echo     $user_name;
                        
         echo      '              <div class="dd_menu">';
         echo       '                 <div class="dd_left">';
@@ -106,8 +121,8 @@
         echo                '            <ul>';
         echo                 '               <li>Your Profile</li>';
         echo                  '              <li>Your Books</li>';
-        echo                   '             <li>Your Order</li>';
-        echo                    '            <li>Logout</li>';
+        echo                   '             <li><a href="order.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">Your Order</a></li>';
+        echo                    '            <li><a href="homepage.php?log=out" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >logout</a></li>';
         echo                     '       </ul>';
         echo                      '  </div>';
         echo   '                 </div>';
@@ -298,6 +313,13 @@
             mainimg.src = smallimg[4].src;        
         }
 
+    </script>
+     <script>
+        var dd_main = document.querySelector(".dd_main");
+
+        dd_main.addEventListener("click", function(){
+            this.classList.toggle("active");
+            })
     </script>
 </body>
 </html>

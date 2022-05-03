@@ -40,15 +40,17 @@
 }
 
 .navbar{
-    order: 3;
 	background: none;
-	width: 100%;
+	width: 20px;
 	height: 60px;
     margin-top: 10px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 50px;
+}
+.navbar .nav_right{
+    margin-left: -110px;
 }
 
 
@@ -78,7 +80,7 @@
 .navbar .dd_menu {
     position: absolute;
     width: 300px;
-    right: -25px;
+    right: -30px;
     top: 47px;
     display: flex;
     background: #fff;
@@ -119,7 +121,6 @@
 .navbar .dd_main.active .dd_menu{
 	display: flex;
 }
-
 /* buttons */
 #button
 {   
@@ -248,6 +249,10 @@ form.example::after
     #signup,#signin
     {
         width: 42%;
+    }
+    .navbar .nav_right
+    {
+        margin-left: -70px;
     }
 }
 /* book area */

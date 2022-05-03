@@ -38,7 +38,7 @@
 
 .navbar{
 	background: none;
-	width: 100%;
+	width: 25px;
 	height: 60px;
     margin-top: 10px;
 	display: flex;
@@ -46,7 +46,9 @@
 	align-items: center;
 	padding: 0 50px;
 }
-
+.navbar .nav_right{
+    margin-left: -110px;
+}
 
 
 .navbar .nav_right > ul{
@@ -229,6 +231,10 @@
     #nav
     {
         padding-top: 30px;
+    }
+    .navbar .nav_right
+    {
+        margin-left: -70px;
     }
   }
   /* display area */

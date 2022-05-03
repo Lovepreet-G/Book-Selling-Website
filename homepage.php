@@ -1,13 +1,38 @@
 <?php
 
     session_start();
+    error_reporting(E_ALL ^ E_WARNING);
     
-    $_SESSION["user_id"]=null;
+    $conn=pg_connect("host = localhost dbname= postgres user= postgres password= bookwebsite ") or die (preg_last_error());
+
+    $_SESSION["user_id"]=1;
 
     $user_id=$_SESSION["user_id"];
+    
+    $log=null;
 
+    $log=$_GET["log"];
 
-    $conn=pg_connect("host = localhost dbname= postgres user= postgres password= bookwebsite ") or die (preg_last_error());
+    if(isset($log))
+    {
+        $user_id=null;
+    }
+
+    if(isset($user_id))
+    {
+        $query ="select * from user_table";
+
+        $result= pg_query($conn,$query) or die (preg_last_error());
+        while ($row =pg_fetch_row($result) )
+        {
+            if($row[0]==$user_id)
+            {
+                $user_name=$row[1];
+            }
+        }
+    }
+
+   
 
     $query = "select * from user_book_table";
 
@@ -68,7 +93,7 @@
         echo   '         <ul>';
         echo    '            <li class="nr_li dd_main">';
         echo     '               <!-- <img src="profile_pic.png" alt="profile_img"> -->';
-        echo     '              Lovepreet';
+        echo     $user_name;
                        
         echo      '              <div class="dd_menu">';
         echo       '                 <div class="dd_left">';
@@ -83,8 +108,8 @@
         echo                '            <ul>';
         echo                 '               <li>Your Profile</li>';
         echo                  '              <li>Your Books</li>';
-        echo                   '             <li>Your Order</li>';
-        echo                    '            <li>Logout</li>';
+        echo                   '             <li><a href="order.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">Your Order</a></li>';
+        echo                    '            <li><a href="homepage.php?log=out"  style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">logout</a></li>';
         echo                     '       </ul>';
         echo                      '  </div>';
         echo   '                 </div>';

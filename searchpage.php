@@ -113,7 +113,7 @@
         echo              '          </div>';
         echo               '         <div class="dd_right">';
         echo                '            <ul>';
-        echo                 '               <li>Your Profile</li>';
+        echo                 '               <li><a href="profile.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">Your Profile</a></li>';
         echo                  '              <li>Your Books</li>';
         echo                   '             <li><a href="order.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">Your Order</a></li>';
         echo                    '            <li><a href="homepage.php?log=out" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >logout</a></li>';

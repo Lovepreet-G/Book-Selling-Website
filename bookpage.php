@@ -323,3 +323,6 @@
     </script>
 </body>
 </html>
+<?php
+pg_close($conn);
+?>

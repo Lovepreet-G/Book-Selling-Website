@@ -70,7 +70,7 @@
         </div>
           <!-- search bar -->
           <div id="search-bar">
-            <form class="example" action="action_page.php">
+            <form class="example" action="searchpage.php">
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
@@ -187,7 +187,7 @@
                             echo ' <td> </td>';
                             echo '<td>'.$row[1].'</td>';
                             echo ' <td>'.$row[4].'</td>';
-                            echo ' <td><a href="bookpage.php?id='.$row[0].'"  name="book_id" class="btn btn-primary">Details</a></td>';
+                            echo ' <td><a href="bookpage.php?id='.$row[0].'"  name="book_id" class="btn btn-primary" style="background-color: #f7971e ;border: none;">Details</a></td>';
                             echo'</tr>';
                             $i++;
                         }
@@ -303,3 +303,6 @@
     </script>
 </body>
 </html>
+<?php
+pg_close($conn);
+?>

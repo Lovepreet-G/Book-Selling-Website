@@ -45,16 +45,7 @@
             
             $bought++;
         }
-    }
-
-
-
-
-
-    
-
-    
-    
+    }  
 
 
 
@@ -201,8 +192,9 @@
                     
                     <br>
                     <!-- <button id="cart-btn" class="btn btn-primary">Edit</button> -->
-                    <button id="buy-btn" class="btn btn-primary mb-3">Edit</button>
-
+                    <form action="editprof.php" method="get">
+                        <button id="buy-btn" class="btn btn-primary mb-3">Edit</button>
+                    </form>
             </div>
         </div>
     </section>
@@ -311,3 +303,6 @@
     </script>
 </body>
 </html>
+<?php
+pg_close($conn);
+?>

@@ -1,6 +1,7 @@
 <?php
 
     session_start();
+    error_reporting(E_ALL ^ E_WARNING);
 
     $conn=pg_connect("host = localhost dbname= postgres user= postgres password= bookwebsite ") or die (preg_last_error());
 
@@ -22,7 +23,7 @@
 
    
  
-    $query1 = "select * from book_order";
+    $query1 = "select * from book_order ORDER BY dte DESC";
 
     $result1= pg_query($conn,$query1) or die (preg_last_error());
 
@@ -32,9 +33,11 @@
         if($row[2]==$user_id)
         {
             $book_id[$i]=$row[1];
+            $date[$i]=$row[3];
             $i++;
         }
     }
+    
     
     $query2 = "select * from user_book_table";
 
@@ -177,6 +180,7 @@
             <tbody>
                 <?php
                     $i=1;
+                    $j=0;
                     while ($row =pg_fetch_row($result2) )
                     {
                         foreach ($book_id as $temp)
@@ -184,12 +188,13 @@
                         {
                             echo '<tr>';
                             echo  '<th scope="row">'.$i.'</th>';
-                            echo ' <td> </td>';
+                            echo ' <td> '.$date[$j].' </td>';
                             echo '<td>'.$row[1].'</td>';
                             echo ' <td>'.$row[4].'</td>';
                             echo ' <td><a href="bookpage.php?id='.$row[0].'"  name="book_id" class="btn btn-primary" style="background-color: #f7971e ;border: none;">Details</a></td>';
                             echo'</tr>';
                             $i++;
+                            $j++;
                         }
                     }            
                        

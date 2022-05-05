@@ -1,0 +1,3 @@
+Users table: 
+
+CREATE TABLE users (uid SERIAL PRIMARY KEY, uname varchar(50), uemail varchar(20) UNIQUE, umob bigint UNIQUE, upass varchar(255), bought int DEFAULT 0, sold int DEFAULT 0, address varchar(50) DEFAULT 'NA', pincode int DEFAULT 0, date TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP);

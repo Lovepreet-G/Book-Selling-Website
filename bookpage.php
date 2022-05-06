@@ -1,6 +1,8 @@
 <?php
 
     session_start();
+    error_reporting(E_ALL ^ E_WARNING);
+
 
     $user_id=$_SESSION["user_id"];
 
@@ -8,7 +10,7 @@
 
     if(isset($user_id))
     {
-        $query ="select * from user_table";
+        $query ="select * from users";
 
         $result= pg_query($conn,$query) or die (preg_last_error());
         while ($row =pg_fetch_row($result) )
@@ -62,7 +64,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bookpage.css">
+    <link rel="stylesheet" href="css/bookpage.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="https://kit.fontawesome.com/624437a27c.js" crossorigin="anonymous"></script>
@@ -88,12 +91,14 @@
         if($user_id==null)
         {  
             echo '<div id ="button">';
-            echo '<button id="signup">';
+            echo '<form action="signup.php" method="get" style="display:inline;">';
+            echo '<button id="signup" type="submit" >  ';
             echo  '   Sign up';
-            echo '</button>';
+            echo '</button> </form>';
+            echo '<form action="login.php" method="get" style="display:inline;">';
             echo '<button id ="signin">';
             echo  '   Sign in';
-            echo '</button>';
+            echo '</button> </form>';
             echo '</div>';
         }
         else        
@@ -115,6 +120,7 @@
         echo          '                      <li><i class="far fa-star"></i></li>';
         echo           '                     <li><i class="fas fa-download"></i></li>';								
         echo            '                    <li><i class="fas fa-sign-out-alt"></i></li>';
+        echo            '                    <li><i class="fas fa-sign-out-alt"></i></li>';
         echo             '               </ul>';
         echo              '          </div>';
         echo               '         <div class="dd_right">';
@@ -122,7 +128,8 @@
         echo                 '               <li><a href="profile.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">Your Profile</a></li>';
         echo                  '              <li>Your Books</li>';
         echo                   '             <li><a href="order.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">Your Order</a></li>';
-        echo                    '            <li><a href="homepage.php?log=out" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >logout</a></li>';
+        echo                    '            <li><a href="" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >Cart</a></li>';
+        echo                    '            <li><a href="logout.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >logout</a></li>';
         echo                     '       </ul>';
         echo                      '  </div>';
         echo   '                 </div>';
@@ -191,8 +198,28 @@
                     <h6>book</h6>
                     <h3 class="py-3"><?php echo $book_name; ?></h3>
                     <h3 class="mb-3"><?php echo $book_price; ?></h3>
-                    <button id="cart-btn" class="btn btn-primary">Add to cart</button>
-                    <button id="buy-btn" class="btn btn-primary">Buy Now</button>
+                    <?php
+                    if(isset($user_id))
+                    {
+                        echo '<form action="" method="get" style="display:inline;">';
+                        echo '<button id="cart-btn" type="submit" class="btn btn-primary">Add to cart</button>';
+                        echo '</form>';
+                        echo '<form action="" method="get" style="display:inline;">';
+                        echo '<button id="buy-btn" type="submit" class="btn btn-primary">Buy Now</button>';
+                        echo '</form>';
+
+                    }
+                    else
+                    {
+                        echo '<form action="login.php" method="get" style="display:inline;">';
+                        echo '<button id="cart-btn" type="submit" class="btn btn-primary">Add to cart</button>';
+                        echo '</form>';
+                        echo '<form action="login.php" method="get" style="display:inline;">';
+                        echo '<button id="buy-btn" type="submit" class="btn btn-primary">Buy Now</button>';
+                        echo '</form>';
+
+                    }    
+                    ?>
                     <h4 class="mt-4 mb-3">Book Details </h4>
                     <span>
                     <?php echo $course; ?> <br> Publishing Year :- <?php echo $pub_year; ?>

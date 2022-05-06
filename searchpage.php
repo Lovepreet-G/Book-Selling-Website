@@ -1,6 +1,8 @@
 <?php
 
     session_start();
+    error_reporting(E_ALL ^ E_WARNING);
+
 
     $user_id=$_SESSION["user_id"];
 
@@ -8,7 +10,7 @@
 
     if(isset($user_id))
     {
-        $query1 ="select * from user_table";
+        $query1 ="select * from users";
 
         $result1= pg_query($conn,$query1) or die (preg_last_error());
         while ($row =pg_fetch_row($result1) )
@@ -57,7 +59,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="searchpage.css">
+    <link rel="stylesheet" href="css/searchpage.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="https://kit.fontawesome.com/624437a27c.js" crossorigin="anonymous"></script>
@@ -80,14 +83,15 @@
         <?php
         
         if($user_id==null)
-        {  
-            echo '<div id ="button">';
-            echo '<button id="signup">';
+        {  echo '<div id ="button">';
+            echo '<form action="signup.php" method="get" style="display:inline;">';
+            echo '<button id="signup" type="submit" >  ';
             echo  '   Sign up';
-            echo '</button>';
+            echo '</button> </form>';
+            echo '<form action="login.php" method="get" style="display:inline;">';
             echo '<button id ="signin">';
             echo  '   Sign in';
-            echo '</button>';
+            echo '</button> </form>';
             echo '</div>';
         }
         else        
@@ -101,13 +105,13 @@
         echo    '            <li class="nr_li dd_main">';
         echo     '               <!-- <img src="profile_pic.png" alt="profile_img"> -->';
         echo     $user_name;
-                       
         echo      '              <div class="dd_menu">';
         echo       '                 <div class="dd_left">';
         echo        '                    <ul>';
         echo         '                       <li><i class="fas fa-map-marker-alt"></i></li>';
         echo          '                      <li><i class="far fa-star"></i></li>';
         echo           '                     <li><i class="fas fa-download"></i></li>';								
+        echo            '                    <li><i class="fas fa-sign-out-alt"></i></li>';
         echo            '                    <li><i class="fas fa-sign-out-alt"></i></li>';
         echo             '               </ul>';
         echo              '          </div>';
@@ -116,7 +120,8 @@
         echo                 '               <li><a href="profile.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">Your Profile</a></li>';
         echo                  '              <li>Your Books</li>';
         echo                   '             <li><a href="order.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">Your Order</a></li>';
-        echo                    '            <li><a href="homepage.php?log=out" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >logout</a></li>';
+        echo                    '            <li><a href="" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >Cart</a></li>';
+        echo                    '            <li><a href="logout.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >logout</a></li>';
         echo                     '       </ul>';
         echo                      '  </div>';
         echo   '                 </div>';

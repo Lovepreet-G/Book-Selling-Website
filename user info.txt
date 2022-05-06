@@ -1,0 +1,11 @@
+user id
+username
+password
+email
+phone no
+bought
+sold
+address
+pincode
+longitude
+latitude

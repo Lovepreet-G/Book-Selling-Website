@@ -1,4 +1,6 @@
 <?php
+    error_reporting(E_ALL ^ E_WARNING);
+
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         
@@ -59,12 +61,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="login_page.css">
+    <link rel="stylesheet" href="css/login_page.css">
     <link rel="stylesheet" href="css/bootstrap.css">
 
     <script defer src="js/signup.js"></script>
 
     <style>
+        #sign_up_form
+        {
+            margin-top: 15px;
+        }
+
         html { overflow-y: scroll;}
 
         /* Chrome, Safari, Edge, Opera */
@@ -104,7 +111,7 @@
     </style>
 </head> 
 <body>
-    <header id="body-header">
+    <header id="body-header" >
         <!-- Logo -->
         <div id="logo">
             <img src="resources/logo.png" alt="logo" >
@@ -115,7 +122,7 @@
         <h1>Sign Up</h1>
         <form id="form" action="signup.php" method="post">
             <?php
-                error_reporting(E_ALL & ~E_NOTICE);
+                error_reporting(0);
                 if($showAlert) {
                     echo '
                     <div id="error">

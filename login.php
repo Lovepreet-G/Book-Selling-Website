@@ -23,7 +23,7 @@
                 $_SESSION['loggedin'] = true;
                 $_SESSION['user_id'] = $row['uid'];
                 $_SESSION['username'] = $row['uname'];
-                header("location: home.php");
+                header("location: homepage.php");
             }
             else {
                 $showError = true;
@@ -42,10 +42,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="login_page.css">
+    <link rel="stylesheet" href="css/login_page.css">
     <link rel="stylesheet" href="css/bootstrap.css">
 
     <style>
+         #sign_up_form
+        {
+            margin-top: 15px;
+        }
 
         /* Chrome, Safari, Edge, Opera */
         input::-webkit-outer-spin-button,
@@ -80,7 +84,7 @@
         <h1>Sign in</h1>
         <form method="post" action="login.php">
             <?php
-                error_reporting(E_ALL & ~E_NOTICE);
+                error_reporting(0);
                 if($login) {
                     echo '
                     <div id="error">

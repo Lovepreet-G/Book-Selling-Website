@@ -1,0 +1,68 @@
+
+/* Color variables */
+:root
+{
+    --pcolor:rgb(86 86 86);
+    --scolor: #f7971e;
+    --white : white;
+    --gray: grey;
+}
+  /* display area */
+  #display
+  {
+    margin-top: -1px;
+    background-image: url(resources/back.jpg) ;
+    background-attachment: fixed;
+    background-size: cover; 
+    background-position: center;
+    background-color: #b9b9b9;
+    opacity: 0.85;
+    padding-top: 20px;
+  }
+  #display-area
+  {
+    width: 90%;
+    height: auto;
+    background-color: var(--white);    
+    margin: auto;
+    background: transparent;
+    border-radius: 20px;
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;            
+  }
+  /* card padding */
+  .card
+  {
+    padding: 10px;
+    margin: 5px;
+    max-height: 400px;  
+    align-items: center; 
+  }
+  .card:hover
+  {
+    box-shadow: 1px 1px 2px 1px var(--gray) inset;
+    transform: scale(1.05);
+  }
+  .card img
+   {
+        max-width: 200px;
+        max-height: 250px;
+        align-items: center;
+  }
+  .card-body
+  {
+    margin-top: -10px;
+  } 
+  .card-body a
+  {
+    background-color: var(--scolor);
+    border: none;
+  }
+  .card-body a:hover
+  {
+    background-color: var(--scolor);
+    
+  }
+ 

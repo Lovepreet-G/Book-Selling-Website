@@ -1,0 +1,38 @@
+/* Color variables */
+:root
+{
+    --pcolor:rgb(86 86 86);
+    --scolor: #f7971e;
+    --white : white;
+    --gray: grey;
+}
+/* book area */
+
+/* book img */
+#book-details h6
+{
+    color: #a59f9f;
+}
+.small-img-group
+{
+    display: flex;
+    justify-content: space-between;
+}
+.small-img-col
+{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+#book-details #cart-btn
+{
+    background-color: var(--white);
+    border: 1px solid var(--scolor);
+    color: var(--scolor);
+}
+#buy-btn
+{
+    background-color: var(--scolor);
+    border: none;
+    cursor: pointer;
+}
+

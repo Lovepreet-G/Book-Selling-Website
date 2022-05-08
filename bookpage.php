@@ -142,11 +142,7 @@
         echo                 '               <li><a href="profile.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">Your Profile</a></li>';
         echo                  '              <li>Your Books</li>';
         echo                   '             <li><a href="order.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">Your Order</a></li>';
-<<<<<<< HEAD
-        echo                    '            <li><a href="" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >Cart</a></li>';
-=======
         echo                    '            <li><a href="cart.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >Cart</a></li>';
->>>>>>> bookpage
         echo                    '            <li><a href="logout.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >logout</a></li>';
         echo                     '       </ul>';
         echo                      '  </div>';
@@ -159,10 +155,7 @@
         echo '</div>	';
        }
     ?>
-<<<<<<< HEAD
-=======
        
->>>>>>> bookpage
       
     </header>
     
@@ -223,14 +216,6 @@
                     <?php
                     if(isset($user_id))
                     {
-<<<<<<< HEAD
-                        echo '<form action="" method="get" style="display:inline;">';
-                        echo '<button id="cart-btn" type="submit" class="btn btn-primary">Add to cart</button>';
-                        echo '</form>';
-                        echo '<form action="" method="get" style="display:inline;">';
-                        echo '<button id="buy-btn" type="submit" class="btn btn-primary">Buy Now</button>';
-                        echo '</form>';
-=======
                         
                         echo '<a id="cart-btn" onclick="addtocart()" class="btn btn-primary ">Add to cart</a>';
                                                
@@ -238,21 +223,14 @@
                         echo '<button id="buy-btn" type="submit" class="btn btn-primary">Buy Now</button>';
                         echo '</form>';
                         echo'<b><div id="show" style="color:#f7971e; margin-left:10px; size:2rem; "></div><b>';
->>>>>>> bookpage
 
                     }
                     else
                     {
-<<<<<<< HEAD
-                        echo '<form action="login.php" method="get" style="display:inline;">';
-                        echo '<button id="cart-btn" type="submit" class="btn btn-primary">Add to cart</button>';
-                        echo '</form>';
-=======
                        echo '<form action="login.php" method="get" style="display:inline;">';
                         echo '<button id="cart-btn" type="submit" class="btn btn-primary" " >Add to cart</button>';
                        echo '</form>';
                         
->>>>>>> bookpage
                         echo '<form action="login.php" method="get" style="display:inline;">';
                         echo '<button id="buy-btn" type="submit" class="btn btn-primary">Buy Now</button>';
                         echo '</form>';
@@ -376,11 +354,8 @@
             this.classList.toggle("active");
             })
     </script>
-<<<<<<< HEAD
-=======
 
  
->>>>>>> bookpage
 </body>
 </html>
 <?php

@@ -1,5 +1,39 @@
 <?php
+    
+    session_start();
+
+    error_reporting(E_ALL ^ E_WARNING);
+    
     $conn=pg_connect("host = localhost dbname= postgres user= postgres password= bookwebsite ") or die (preg_last_error());
+
+    // $_SESSION["user_id"];
+
+    $user_id=$_SESSION["user_id"];
+    
+    // $log=null;
+
+    // $log=$_GET["log"];
+
+    if(isset($log))
+    {
+        $user_id=null;
+    }
+
+    if(isset($user_id))
+    {
+        $query ="select * from users";
+
+        $result= pg_query($conn,$query) or die (preg_last_error());
+        while ($row =pg_fetch_row($result) )
+        {
+            if($row[0]==$user_id)
+            {
+                $user_name=$row[1];
+            }
+        }
+    }
+
+   
 
     $query = "select * from user_book_table";
 
@@ -16,34 +50,84 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="css/homepage.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="https://kit.fontawesome.com/624437a27c.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/624437a27c.js" crossorigin="anonymous"></script>    
     <title>Home</title>
 </head>
-<body>
+<body>    
     <header id="body-header">
         <!-- Logo -->
         <div id="logo">
             <img src="resources/logo.png" alt="logo" >
         </div>
-        <!-- Sign in buttons -->
-        <div id ="button">
-            <button id="signup">
-                Sign up
-            </button>
-            <button id ="signin">
-                Sign in
-            </button>
-        </div>
+        
         <!-- search bar -->
         <div id="search-bar">
-            <form class="example" action="action_page.php">
+            <form class="example" action="searchpage.php" method="get">
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
+        <!-- Sign in buttons -->
+        <?php
+        
+        if($user_id==null)
+        {  
+            echo '<div id ="button">';
+            echo '<form action="signup.php" method="get" style="display:inline;">';
+            echo '<button id="signup" type="submit" >  ';
+            echo  '   Sign up';
+            echo '</button> </form>';
+            echo '<form action="login.php" method="get" style="display:inline;">';
+            echo '<button id ="signin">';
+            echo  '   Sign in';
+            echo '</button> </form>';
+            echo '</div>';
+        }
+        else        
+       {
+        
+        echo '<div class="wrapper">';
+        echo  '  <div class="navbar">';
+    
+        echo  '   <div class="nav_right">';
+        echo   '         <ul>';
+        echo    '            <li class="nr_li dd_main">';
+        echo     '               <!-- <img src="profile_pic.png" alt="profile_img"> -->';
+        echo     $user_name;
+                       
+        echo      '              <div class="dd_menu">';
+        echo       '                 <div class="dd_left">';
+        echo        '                    <ul>';
+        echo         '                       <li><i class="fas fa-map-marker-alt"></i></li>';
+        echo          '                      <li><i class="far fa-star"></i></li>';
+        echo           '                     <li><i class="fas fa-download"></i></li>';								
+        echo            '                    <li><i class="fas fa-sign-out-alt"></i></li>';
+        echo            '                    <li><i class="fas fa-sign-out-alt"></i></li>';
+        echo             '               </ul>';
+        echo              '          </div>';
+        echo               '         <div class="dd_right">';
+        echo                '            <ul>';
+        echo                 '               <li><a href="profile.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">Your Profile</a></li>';
+        echo                  '              <li>Your Books</li>';
+        echo                   '             <li><a href="order.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">Your Order</a></li>';
+        echo                    '            <li><a href="cart.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >Cart</a></li>';
+        echo                    '            <li><a href="logout.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >logout</a></li>';
+        echo                     '       </ul>';
+        echo                      '  </div>';
+        echo   '                 </div>';
+        echo    '            </li>';
+    
+        echo      '      </ul>';
+        echo       ' </div>';
+        echo '   </div>';
+        echo '</div>	';
+       }
+    ?>
+       
     </header>
     <!--navigation menu  -->
     <div id="nav">  
@@ -53,19 +137,19 @@
                     <a href="#"  >Home</a>
                 </li>
                 <li>
-                    <a href="#">Science</a>
+                    <a href="category.php?cat=Science">Science</a>
                 </li>
                 <li>
-                    <a href="#">Commerce</a>
+                    <a href="category.php?cat=Commerce">Commerce</a>
                 </li>
                 <li>
-                    <a href="#">Arts</a>
+                    <a href="category.php?cat=Arts">Arts</a>
                 </li>
                 <li>
-                    <a href="#">Fiction</a>
+                    <a href="category.php?cat=Fiction">Fiction</a>
                 </li>
                 <li>
-                    <a href="#">Non-Fiction</a>
+                    <a href="category.php?cat=Non-Fiction">Non-Fiction</a>
                 </li>
                 <li>
                     <a href="#contact">Contact</a>
@@ -173,6 +257,13 @@
             </div>
             
     </section>
+    <script>
+        var dd_main = document.querySelector(".dd_main");
+
+        dd_main.addEventListener("click", function(){
+            this.classList.toggle("active");
+            })
+    </script>
     <script src="js/bootstrap.js"></script>
 </body>
 </html>

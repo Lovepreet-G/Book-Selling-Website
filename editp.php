@@ -13,7 +13,7 @@
     $add=$_POST["add"];
 
    
-    $query1 ="update user_table SET user_name = '$user_name' , user_email = '$user_email' , mobile_no = '$mob_no' , pincode = $pin , address ='$add' WHERE user_id =$user_id";
+    $query1 ="update users SET uname = '$user_name' , uemail = '$user_email' , umob = '$mob_no' , pincode = $pin , address ='$add' WHERE uid =$user_id";
     $result1= pg_query($conn,$query1) or die (preg_last_error());
 
     header("Location: profile.php");

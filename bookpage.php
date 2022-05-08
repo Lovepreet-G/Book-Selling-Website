@@ -42,10 +42,6 @@
             $seller_id=$row[11];
         }
     }
-
-
-
-
 ?>
 
 
@@ -69,6 +65,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <script src="https://kit.fontawesome.com/624437a27c.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function addtocart()
+        {
+            var x = new XMLHttpRequest();
+            var id = <?php echo $book_id ; ?> ;
+            x.open("GET","addtocart.php?id="+id );
+
+            x.send();
+
+            x.onreadystatechange=function()
+            {
+                if(x.readyState == 4 && x.status==200)
+                {
+                    document.getElementById("show").innerHTML =x.responseText;
+                }
+            }
+        }
+    </script>
     <title>Home</title>
 </head>
 <body>
@@ -128,7 +142,11 @@
         echo                 '               <li><a href="profile.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">Your Profile</a></li>';
         echo                  '              <li>Your Books</li>';
         echo                   '             <li><a href="order.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">Your Order</a></li>';
+<<<<<<< HEAD
         echo                    '            <li><a href="" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >Cart</a></li>';
+=======
+        echo                    '            <li><a href="cart.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >Cart</a></li>';
+>>>>>>> bookpage
         echo                    '            <li><a href="logout.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >logout</a></li>';
         echo                     '       </ul>';
         echo                      '  </div>';
@@ -141,6 +159,10 @@
         echo '</div>	';
        }
     ?>
+<<<<<<< HEAD
+=======
+       
+>>>>>>> bookpage
       
     </header>
     
@@ -201,19 +223,36 @@
                     <?php
                     if(isset($user_id))
                     {
+<<<<<<< HEAD
                         echo '<form action="" method="get" style="display:inline;">';
                         echo '<button id="cart-btn" type="submit" class="btn btn-primary">Add to cart</button>';
                         echo '</form>';
                         echo '<form action="" method="get" style="display:inline;">';
                         echo '<button id="buy-btn" type="submit" class="btn btn-primary">Buy Now</button>';
                         echo '</form>';
+=======
+                        
+                        echo '<a id="cart-btn" onclick="addtocart()" class="btn btn-primary ">Add to cart</a>';
+                                               
+                        echo '<form action="" method="get" style="display:inline;">';
+                        echo '<button id="buy-btn" type="submit" class="btn btn-primary">Buy Now</button>';
+                        echo '</form>';
+                        echo'<b><div id="show" style="color:#f7971e; margin-left:10px; size:2rem; "></div><b>';
+>>>>>>> bookpage
 
                     }
                     else
                     {
+<<<<<<< HEAD
                         echo '<form action="login.php" method="get" style="display:inline;">';
                         echo '<button id="cart-btn" type="submit" class="btn btn-primary">Add to cart</button>';
                         echo '</form>';
+=======
+                       echo '<form action="login.php" method="get" style="display:inline;">';
+                        echo '<button id="cart-btn" type="submit" class="btn btn-primary" " >Add to cart</button>';
+                       echo '</form>';
+                        
+>>>>>>> bookpage
                         echo '<form action="login.php" method="get" style="display:inline;">';
                         echo '<button id="buy-btn" type="submit" class="btn btn-primary">Buy Now</button>';
                         echo '</form>';
@@ -233,17 +272,6 @@
             </div>
         </div>
         
-            <!-- <div id="display-card">
-                <Div class="card " style="width: 18rem;">
-                    <img src="resources/cc.jpg" alt="image">
-                    <div class="card-body">
-                        <h5 class="card-title"> Compiler Construction </h5>
-                        <p class="card-text"> TY Bcs <br> Publishing Year :- 2022</p>
-                        <a href="" class="btn btn-primary">Buy</a>
-                    </div>
-                </Div>
-            </div>
-        </div> -->
     </section>
     <!-- contact                       -->
     <section id="contact">
@@ -348,6 +376,11 @@
             this.classList.toggle("active");
             })
     </script>
+<<<<<<< HEAD
+=======
+
+ 
+>>>>>>> bookpage
 </body>
 </html>
 <?php

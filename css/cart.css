@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+
+
+
+ * { 
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif; 
+    } 
+    /* using css variable */
+:root { 
+     --text-clr: #4f4f4f;
+     } 
+ p {
+    color: #6c757d;
+    } 
+a {
+    text-decoration: none; 
+    color: var(--text-clr);
+} 
+a:hover {
+    text-decoration: none;
+     color: var(--text-clr);
+}
+h2 {
+    color: var(--text-clr);
+    font-size: 1.5rem; 
+} 
+h1 {
+    color: var(--text-clr);
+    font-size: 1.3rem; 
+} 
+.main_cart {
+    background: #fff;
+} 
+.card {
+    border: none;
+ } 
+ 
+.product_img img {
+    min-width: 200px;
+    max-height: 200px;
+} 
+.product_name {
+     color: black;
+    font-size: 1.4rem; 
+    text-transform: capitalize; 
+    font-weight: 500;
+ } 
+.card-title p { 
+    font-size: 0.9rem; 
+    font-weight: 500;
+ } 
+ .card-title{
+     flex-basis: 50%;
+ }
+.remove-and-wish p {
+     font-size: 0.8rem;
+      margin-bottom: 0;
+     } 
+.price-money h3 {
+     font-size: 1rem;
+      font-weight: 600; 
+    } 
+.set_quantity { 
+    /* justify-content: center; */
+    flex-basis: 50%;
+    } 
+.set_quantity::after { 
+    /*content: "(Note, 1 piece)";*/
+    width: auto;
+    height: auto;
+    text-align: center;
+    position: absolute;
+    bottom: -20px;
+    right: 1.5rem;
+    font-size: 0.8rem;
+    }
+.page-link { 
+    line-height: 16px; 
+    width: 45px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #495057; 
+    } 
+.page-item input {
+    line-height: 22px;
+    padding: 3px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    }
+.page-link:hover {
+    text-decoration: none;
+    color: #495057;
+    outline: none !important;
+    } 
+.page-link:focus { 
+    box-shadow: none;
+    } 
+.price_indiv p {
+    font-size: 1.1rem; 
+    } 
+.check{
+    width: 40%;
+    border: 1px solid;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 700;
+    background: #f7971e;
+}
+.check:hover{
+    border-color:#f7971e;
+    transition: .5s;
+}
+@media (max-width: 450px)
+{
+    .card-details{
+        flex-direction: column-reverse;
+
+    }
+    #set{
+        margin: auto;
+    }
+}
+/* @media (max-width: 450px)
+{
+    .set_quantity{
+        margin-left: -10%;
+
+    }
+} */

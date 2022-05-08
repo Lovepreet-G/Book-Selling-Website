@@ -195,6 +195,9 @@ h1 {
     font-size: 0.9rem; 
     font-weight: 500;
  } 
+ .card-title{
+     flex-basis: 50%;
+ }
 .remove-and-wish p {
      font-size: 0.8rem;
       margin-bottom: 0;
@@ -204,10 +207,11 @@ h1 {
       font-weight: 600; 
     } 
 .set_quantity { 
-    position: relative;
+    /* justify-content: center; */
+    flex-basis: 50%;
     } 
 .set_quantity::after { 
-    content: "(Note, 1 piece)";
+    /*content: "(Note, 1 piece)";*/
     width: auto;
     height: auto;
     text-align: center;
@@ -257,6 +261,23 @@ h1 {
     border-color:#f7971e;
     transition: .5s;
 }
+@media (max-width: 450px)
+{
+    .card-details{
+        flex-direction: column-reverse;
+
+    }
+    #set{
+        margin: auto;
+    }
+}
+/* @media (max-width: 450px)
+{
+    .set_quantity{
+        margin-left: -10%;
+
+    }
+} */
  /* Contact section */
   /* centering the heading */
   .section-heading

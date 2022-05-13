@@ -1,0 +1,202 @@
+*{
+	
+	padding:0; 
+	margin:0;
+	box-sizing:
+	border-box;
+	font-family:sans-serif;
+}
+body
+{
+	width: 100vw;
+	height: auto;
+	background: #a2bedb;
+	font-size: 1.2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container
+{
+	background: rgb(255, 255, 255);
+	max-width: 800px;
+	height: auto;
+	
+	
+	padding: 0.5rem 1.5rem;
+}
+.main-container
+{
+	background: rgb(255, 255, 255);
+	width: auto;
+	height: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	
+	padding: 0.5rem 1.5rem;
+}
+.box1
+{
+	display: flex;
+}
+.box2
+{
+	
+	display: flex;
+}
+
+
+.invoice
+{
+	flex-basis: 50%;
+}
+.payment
+{
+	
+	flex-basis: 50%;
+}
+.left
+{
+	flex-basis: 50%;
+}
+.right
+{
+	margin-top: 28px;
+	flex-basis: 50%;
+}
+.payment
+{
+	display: flex;
+
+}
+.payment-left
+{
+	flex-basis: 50%;
+
+}
+.payment-right
+{
+	
+	flex-basis: 50%;
+	
+
+}
+
+.confirmbuy
+{
+	text-align:center;
+}
+
+form
+{
+	padding: 10px;
+}
+form[id="img"]
+{
+	margin-top: 15px;
+}
+
+
+
+
+
+
+form input[type="text"]
+{
+	width: 100%;
+	padding: 10px 10px;
+	margin: 10px 0px;
+	outline: none;
+	border-radius: 15px;
+}
+form input[type="number"]
+{
+	width: 100%;
+	padding: 0.5rem 0.7rem;
+	margin: 0.5rem 0;
+	outline: none;
+	border-radius: 15px;
+}
+
+
+
+select
+{
+	width: 100%;
+	padding: 10px;
+	border-radius: 15px;
+}
+select[id="pin-code"]:hover
+{
+	background:#b7d9ec
+}
+
+
+button[class="upi" ]
+{
+	width: 100%;
+	
+	padding: 0.7rem 1.5rem;
+	text-align: center;
+	background: #34495e;
+	color: rgb(255, 255, 255);
+	border: none;
+	outline: none;
+	margin-top: 1rem;
+	margin-left: 10px;
+	cursor: pointer;
+}
+button[class="card"]
+{
+	width: 100%;
+	
+	padding: 0.7rem 1.5rem;
+	text-align: center;
+	background: #34495e;
+	color: white;
+	border: none;
+	outline: none;
+	margin-top: 1rem;
+	margin-left: 10px;
+	cursor: pointer;
+}
+input[type="confirmbuy"]:hover
+{
+	background: #2c3e50;
+}
+input[type="confirmbuy1"]
+{
+	border-radius: 15px;
+	
+}
+
+input[type="text"]:hover
+{
+	background: #e3f0f1;
+}
+
+input[type="radio"]
+{
+	margin-left: 20px;
+}
+label[class="Very Good"]
+{
+	margin-left: 40px;
+}
+
+
+@media(max-width: 630px)
+{
+	.box1
+	{
+		flex-direction: column;
+	}
+	.box2
+	{
+		flex-direction: column;
+	}
+	
+}
+
+
+

@@ -1,6 +1,6 @@
 <?php
 
-    $DNS = "host=localhost dbname=postgres user=postgres password=bookwebsite";
+    $DNS = "host=localhost dbname=book user=postgres password=bookwebsite";
     $conn = pg_connect($DNS);
 
     if(!$conn) {

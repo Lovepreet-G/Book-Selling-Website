@@ -2,9 +2,13 @@
 
     session_start();
 
+    if(!(isset($_SESSION['books_in_cart']))) {
+        $_SESSION['books_in_cart'] = array();
+    }
+
     $user_id=$_SESSION["user_id"];
 
-    $conn=pg_connect("host = localhost dbname= postgres user= postgres password= bookwebsite ") or die (preg_last_error());
+    $conn=pg_connect("host = localhost dbname=book user= postgres password= bookwebsite ") or die (preg_last_error());
 
     $id=$_GET["id"];
 
@@ -17,7 +21,7 @@
         $query1 ="insert into cart(book_id,user_id,dte) values($id,$user_id, CURRENT_DATE )" ;
         $result1= pg_query($conn,$query1) or die (preg_last_error());
         echo "Added To Cart";
-      
+        array_push($_SESSION['books_in_cart'], $id);
     }
     else
     {
@@ -44,6 +48,7 @@
             $query1 ="insert into cart(book_id,user_id,dte) values($id,$user_id, CURRENT_DATE )" ;
             $result1= pg_query($conn,$query1) or die (preg_last_error());
             echo "Added To Cart";
+            array_push($_SESSION['books_in_cart'], $id);
         }  
     }
 

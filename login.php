@@ -23,7 +23,12 @@
                 $_SESSION['loggedin'] = true;
                 $_SESSION['user_id'] = $row['uid'];
                 $_SESSION['username'] = $row['uname'];
-                header("location: homepage.php");
+                if($_SESSION['bookPageRequest'] == true) {
+                    $_SESSION['bookPageRequest'] = false;
+                    header("location: bookpage.php");
+                } else {
+                    header("location: homepage.php");
+                }
             }
             else {
                 $showError = true;
@@ -94,7 +99,7 @@
                 } else if ($showError) {
                     echo '
                     <div id="error">
-                        <p>Invalid Credentials.</p>
+                        <p style="color:tomato;">Invalid Credentials.</p>
                     </div> ';
                 }
             ?>

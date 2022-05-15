@@ -1,9 +1,9 @@
 <?php
 
     session_start();
-    error_reporting(E_ALL ^ E_WARNING);
+    error_reporting(0);
 
-    $conn=pg_connect("host = localhost dbname= postgres user= postgres password= bookwebsite ") or die (preg_last_error());
+    $conn=pg_connect("host = localhost dbname= book user= postgres password= bookwebsite ") or die (preg_last_error());
 
     $user_id=$_SESSION["user_id"];
 
@@ -27,6 +27,8 @@
 
     $result1= pg_query($conn,$query1) or die (preg_last_error());
 
+    $status = array();
+
     $i=0;
     while ($row =pg_fetch_row($result1) )
     {
@@ -36,6 +38,7 @@
             $date[$i]=$row[3];
             $i++;
         }
+        array_push($status, $row[9]);
     }
     
     
@@ -180,6 +183,7 @@
                     <th scope="col">Book Name</th>
                     <th scope="col">Price</th>
                     <th scope="col">Link</th>
+                    <th scope="col">Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -197,6 +201,7 @@
                             echo '<td>'.$row[1].'</td>';
                             echo ' <td>'.$row[4].'</td>';
                             echo ' <td><a href="bookpage.php?id='.$row[0].'"  name="book_id" class="btn btn-primary" style="background-color: #f7971e ;border: none;">Details</a></td>';
+                            echo '<td>'.$status[$j].'</td>';
                             echo'</tr>';
                             $i++;
                             $j++;

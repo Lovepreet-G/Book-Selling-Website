@@ -2,9 +2,9 @@
     
     session_start();
 
-    error_reporting(E_ALL ^ E_WARNING);
+    error_reporting(0);
     
-    $conn=pg_connect("host = localhost dbname= postgres user= postgres password= bookwebsite ") or die (preg_last_error());
+    $conn=pg_connect("host = localhost dbname=book user= postgres password= bookwebsite ") or die (preg_last_error());
 
     // $_SESSION["user_id"];
 

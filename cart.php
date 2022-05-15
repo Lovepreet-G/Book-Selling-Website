@@ -1,9 +1,9 @@
 <?php
 
     session_start();
-    error_reporting(E_ALL ^ E_WARNING);
+    error_reporting(0);
 
-    $conn=pg_connect("host = localhost dbname= postgres user= postgres password= bookwebsite ") or die (preg_last_error());
+    $conn=pg_connect("host = localhost dbname= book user= postgres password= bookwebsite ") or die (preg_last_error());
 
     $user_id=$_SESSION["user_id"];
 
@@ -183,7 +183,7 @@
                 <div class="row mt-5 gx-3">
                     <!-- left side div -->
                     <?php
-                        $total_price=0;
+                        $_SESSION['total_price']=0;
                         if($rows==0)
                         {
                             echo '<h2 style="margin:auto;" > No Books Added Yet <h2>';
@@ -242,13 +242,16 @@
                             echo    '</div>';
                             echo    '<hr/>';
                             echo '</div>';
-                            $total_price +=$row[4];
+                            $_SESSION['total_price'] +=$row[4];
                             }
                         }
                         }
                     ?>
                 </div>
             </div>
+        </div>
+        <div class="row mt-5">
+            <a href="homepage.php" name="Explore" class="btn btn-primary" style="background-color: #f7971e ;border: none; width: 500px; height: 60px;margin-left: 650px; font-size: 25px;">Add books to cart</a>
         </div>
         <div class="row">
             <!-- right side div -->
@@ -257,7 +260,7 @@
                             <h2 class="product_name mb-5">Total Amount</h2>
                             <div class="price_indiv d-flex justify-content-between">
                                 <p>Product amount</p>
-                                <p>$<span id="product_total_amt"><?php echo $total_price; ?></span></p>
+                                <p>$<span id="product_total_amt"><?php echo $_SESSION['total_price']; ?></span></p>
                             </div>
                             <div class="price_indiv d-flex justify-content-between">
                                 <p>Shipping Charge</p>
@@ -266,9 +269,9 @@
                             <hr />
                             <div class="total-amt d-flex justify-content-between font-weight-bold">
                                 <p>The total amount of (including VAT)</p>
-                                <p>$<span id="total_cart_amt"><?php echo ($total_price+50); ?></span></p>
+                                <p>$<span id="total_cart_amt"><?php echo ($_SESSION['total_price']+50); ?></span></p>
                             </div>
-                            <a href=""  name="book_id" class="btn btn-primary" style="background-color: #f7971e ;border: none;">Checkout</a>
+                            <a href="buy.php" name="Checkout" class="btn btn-primary" style="background-color: #f7971e ;border: none;">Checkout</a>
                         </div>
                     </div>     
         </div>

@@ -1,12 +1,12 @@
 <?php
 
     session_start();
-    error_reporting(E_ALL ^ E_WARNING);
+    error_reporting(0);
 
 
     $user_id=$_SESSION["user_id"];
 
-    $conn=pg_connect("host = localhost dbname= postgres user= postgres password= bookwebsite ") or die (preg_last_error());
+    $conn=pg_connect("host = localhost dbname= book user= postgres password= bookwebsite ") or die (preg_last_error());
     if(isset($user_id))
     {
         $query1 ="select * from users";

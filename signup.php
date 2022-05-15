@@ -1,5 +1,5 @@
 <?php
-    error_reporting(E_ALL ^ E_WARNING);
+    error_reporting(0);
 
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -129,6 +129,7 @@
                     <div id="error">
                         <p>Successfully Signed UP!!!</p>
                     </div> ';
+                    header("location: login.php");
                 }
                 if($showError) {
                     if($eExists) {

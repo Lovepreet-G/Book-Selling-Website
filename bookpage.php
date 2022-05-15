@@ -1,18 +1,17 @@
 <?php
 
     session_start();
-    error_reporting(E_ALL ^ E_WARNING);
-
+    error_reporting(0);
 
     $user_id=$_SESSION["user_id"];
 
-    $conn=pg_connect("host = localhost dbname= postgres user= postgres password= bookwebsite ") or die (preg_last_error());
+    $conn=pg_connect("host = localhost dbname= book user= postgres password= bookwebsite ") or die (preg_last_error());
 
     if(isset($user_id))
     {
         $query ="select * from users";
 
-        $result= pg_query($conn,$query) or die (preg_last_error());
+        $result= pg_query($conn, $query) or die (preg_last_error());
         while ($row =pg_fetch_row($result) )
         {
             if($row[0]==$user_id)
@@ -28,12 +27,12 @@
     $result1= pg_query($conn,$query1) or die (preg_last_error());
 
     if(isset($_GET['id'])){
-        $book_id = $_GET['id']; 
+        $_SESSION['book_id'] = $_GET['id']; 
         
     }
     while ($row =pg_fetch_row($result1) )
     {
-        if($row[0]==$book_id)
+        if($row[0]==$_SESSION['book_id'])
         {
             $book_name=$row[1];
             $book_price=$row[4];
@@ -69,7 +68,7 @@
         function addtocart()
         {
             var x = new XMLHttpRequest();
-            var id = <?php echo $book_id ; ?> ;
+            var id = <?php echo $_SESSION['book_id'] ; ?> ;
             x.open("GET","addtocart.php?id="+id );
 
             x.send();
@@ -219,16 +218,17 @@
                         
                         echo '<a id="cart-btn" onclick="addtocart()" class="btn btn-primary ">Add to cart</a>';
                                                
-                        echo '<form action="" method="get" style="display:inline;">';
-                        echo '<button id="buy-btn" type="submit" class="btn btn-primary">Buy Now</button>';
+                        echo '<form action="cart.php" method="get" style="display:inline;">';
+                        echo '<button id="buy-btn" onclick="addtocart()" type="submit" class="btn btn-primary">Buy Now</button>';
                         echo '</form>';
                         echo'<b><div id="show" style="color:#f7971e; margin-left:10px; size:2rem; "></div><b>';
 
                     }
                     else
                     {
+                        $_SESSION['bookPageRequest'] = true;
                        echo '<form action="login.php" method="get" style="display:inline;">';
-                        echo '<button id="cart-btn" type="submit" class="btn btn-primary" " >Add to cart</button>';
+                        echo '<button id="cart-btn" type="submit" class="btn btn-primary">Add to cart</button>';
                        echo '</form>';
                         
                         echo '<form action="login.php" method="get" style="display:inline;">';

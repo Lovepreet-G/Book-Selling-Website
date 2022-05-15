@@ -1,0 +1,10 @@
+
+for book_table
+
+create table book_table ( book_id int not null primary key, book_name char(30),book_img bytea ,p_mrp int,selling_price int ,pub_name char(30),pub_year int ,book_cat char[30], c_year int ,c_name char(30) ,book_condition int,seller_id int, FOREIGN KEY(seller_id) REFERENCES user_table(user_id) ON update cascade);
+
+create table book_table (book_id serial primary key, book_name char(30), book_img bytea, p_mrp int, selling_price int, pub_name char(30), pub_year int, book_cat char[30], c_year int, c_name char(30), book_condition int, seller_id int, FOREIGN KEY(seller_id) REFERENCES users(uid) ON update cascade);
+
+for book_order
+
+CREATE TABLE book_order(srno SERIAL , book_id int NOT NULL ,user_id int NOT NULL,dte DATE,FOREIGN KEY(user_id) REFERENCES user_table(user_id) ON update cascade,FOREIGN KEY(book_id) REFERENCES user_book_table(book_id) ON update cascade);

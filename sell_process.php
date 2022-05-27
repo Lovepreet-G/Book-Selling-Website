@@ -1,11 +1,11 @@
 <?php
 
-    // error_reporting(0);
+    error_reporting(0);
 
     session_start();
 
-    // $user_id=$_SESSION["user_id"];
-    $user_id=1;
+    $user_id=$_SESSION["user_id"];
+    
 
     include '_dbconn.php';
 

@@ -144,6 +144,18 @@
                 <li>
                     <a href="#contact">Contact</a>
                 </li>
+                <li>
+                <?php
+                    if(isset($user_id))
+                    {
+                        echo '<a href="sell.php">Sell</a>';
+                    }
+                    else
+                    {
+                        echo '<a href="login.php">Sell </a>';
+                    }
+                ?>      
+                </li>
             </ul>
         </nav>
     </div>

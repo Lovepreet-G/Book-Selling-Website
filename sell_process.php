@@ -1,6 +1,6 @@
 <?php
 
-    error_reporting(0);
+    // error_reporting(0);
 
     session_start();
 
@@ -17,8 +17,22 @@
     $pub_year=$_POST["pub_year"];
     $condition=$_POST["condition"];
     $donation=$_POST["donation"];
-    $mrp=$_POST["mrp"];
-    $selling_price=$_POST["selling_price"];
+    if(isset($_POST["mrp"]))
+    {
+        $mrp=$_POST["mrp"];
+    }
+    else
+    {
+        $mrp=0;
+    }
+    if(isset($_POST["selling_price"]))
+    {
+        $selling_price=$_POST["selling_price"];        
+    }
+    else
+    {
+        $selling_price=0;
+    }
     // $book_image=$_POST["book_image"];
 
     $query ="insert into user_book_table(book_name,p_mrp,selling_price,pub_name,pub_year,book_cat,c_year,c_name,book_condition,user_id) values('$bname',$mrp,$selling_price,'$pub',$pub_year,'$cat','$year','$course','$condition',$user_id)";

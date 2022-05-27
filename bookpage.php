@@ -5,7 +5,7 @@
 
     $user_id=$_SESSION["user_id"];
 
-    $conn=pg_connect("host = localhost dbname= book user= postgres password= bookwebsite ") or die (preg_last_error());
+    include '_dbconn.php';
 
     if(isset($user_id))
     {
@@ -22,7 +22,7 @@
     }
 
 
-    $query1 = "select * from user_book_table";
+    $query1 = "select * from admin_book_table";
 
     $result1= pg_query($conn,$query1) or die (preg_last_error());
 
@@ -139,7 +139,7 @@
         echo               '         <div class="dd_right">';
         echo                '            <ul>';
         echo                 '               <li><a href="profile.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">Your Profile</a></li>';
-        echo                  '              <li>Your Books</li>';
+        echo                  '              <li><a href="yourbook.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">Your Book</a></li>';
         echo                   '             <li><a href="order.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;">Your Order</a></li>';
         echo                    '            <li><a href="cart.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >Cart</a></li>';
         echo                    '            <li><a href="logout.php" style="color: rgb(86 86 86); text-decoration: none; transition: color 1s, border-bottom 3s ;" >logout</a></li>';
@@ -182,6 +182,9 @@
                 </li>
                 <li>
                     <a href="#contact">Contact</a>
+                </li>
+                <li>
+                    <a href="sell.php">Sell</a>
                 </li>
             </ul>
         </nav>

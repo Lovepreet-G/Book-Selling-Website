@@ -6,11 +6,12 @@
 
     $user_id=$_SESSION["user_id"];
 
-    $conn=pg_connect("host = localhost dbname= book user= postgres password= bookwebsite ") or die (preg_last_error());
+    include '_dbconn.php';
+
 
     if(isset($_SESSION['remove_books'])) {
         $book_id = $_SESSION['remove_books'];
-    } else {
+    } else{
         $book_id=$_GET["id"];
         echo $book_id;
     }

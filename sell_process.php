@@ -23,9 +23,7 @@
 
     $query ="insert into user_book_table(book_name,p_mrp,selling_price,pub_name,pub_year,book_cat,c_year,c_name,book_condition,user_id) values('$bname',$mrp,$selling_price,'$pub',$pub_year,'$cat','$year','$course','$condition',$user_id)";
     $result= pg_query($conn,$query) or die (preg_last_error());
-    if(isset($result))
-    {
-        echo "Uploaded";
-    }
-    
+   
+    header("Location: yourbook.php");
+    pg_close($conn);    
 ?>

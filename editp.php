@@ -5,7 +5,7 @@
 
     $user_id=$_SESSION["user_id"];
 
-    $conn=pg_connect("host = localhost dbname= book user= postgres password= bookwebsite ") or die (preg_last_error());
+    include '_dbconn.php';
 
     $user_name=$_POST["uname"];
     $user_email=$_POST["email"];

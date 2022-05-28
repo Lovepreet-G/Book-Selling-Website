@@ -208,10 +208,10 @@
         <div id="contact-container" >
             <!-- contact form -->
             <div id="contact-form">
-                <form action="">
-                    <input type="text" id="input-name" placeholder="Your Name"><br>
-                    <input type="text" id="input-email" placeholder="Email" ><br>
-                    <textarea name="input-message" id="input-message" cols="40" rows="2" placeholder="Meassage"></textarea><br>
+                <form action="email.php" method="post">
+                    <input type="text" id="input-name" name='uname' placeholder="Your Name"><br>
+                    <input type="text" id="input-email" name="uemail" placeholder="Email" ><br>
+                    <textarea name="input-message" id="input-message"  cols="40" rows="2" placeholder="Meassage"></textarea><br>
                     <button type="submit" id="sub-button">Send Meassage </button>
                 </form>
             </div>

@@ -41,7 +41,7 @@
     }
     
     
-    $query2 = "select * from user_book_table";
+    $query2 = "select * from admin_book_table";
 
     $result2= pg_query($conn,$query2) or die (preg_last_error());
     

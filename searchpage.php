@@ -22,6 +22,10 @@
             }
         }
     }
+    if(isset($_GET["price"]))
+    {
+        $pricef=$_GET["price"];
+    }
 
     $search =ucwords($_GET["search"]);
 
@@ -67,7 +71,27 @@
     <script src="https://kit.fontawesome.com/624437a27c.js" crossorigin="anonymous"></script>
     <title>Search</title>
 </head>
-<body>
+<style>
+    #price
+    {
+        background-color:#f7971e;
+        border:none;
+        /* height: 3px; */
+        
+
+    }
+    #center_price
+    {
+        background :white;
+        padding:5px;
+        width:320px; 
+        height:auto;
+        margin:auto; 
+        border: 1px solid gray;  
+        border-radius:10px;
+    }
+</style>
+<body onload="search()">
     <header id="body-header">
         <!-- Logo -->
         <div id="logo">
@@ -76,7 +100,7 @@
            <!-- search bar -->
            <div id="search-bar">
             <form class="example" action="searchpage.php" method="get">
-                <input type="text" placeholder="Search.." name="search">
+                <input type="text" id="search" placeholder="Search.."  name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
@@ -178,6 +202,13 @@
     </div>
     <!-- Display -->
     <section id="display">
+        <center id="center_price">                   
+            <label for="points">Price :</label>
+            <input type="range" id="points" name="Price" min="0" max="500" onchange="updateTextInput(this.value)">
+            <span id="value"> 250</span>
+            <a href="" id="price" name="book_id" class="btn btn-primary"  >Apply</a>
+            
+        </center>
         <div id="display-area">
             <!-- Book display card -->
             <?php
@@ -193,22 +224,55 @@
                     echo "</div>";
                     echo "</div>";
                 }
-                
-                while ($row =pg_fetch_row($result) )
+                if(isset($pricef))
                 {
-                    echo "<div id='display-card'>";
-                        echo '<Div class="card " style="width: 18rem;">';
-                            echo '<img src="resources/cc.jpg" alt="image">';
-                            echo '<div class="card-body">';
-                                echo '<h5 class="card-title"> '.$row[1].' </h5>';
-                                echo '<p class="card-text">'.$row[9].'<br> Publishing Year :- '.$row[6].'</p>';
-                                echo '<a href="bookpage.php?id='.$row[0].'"  name="book_id" class="btn btn-primary">Details</a>';
-                                echo "</form>";
+                    while ($row =pg_fetch_row($result) )
+                    {
+                        if($row[4]>0 && $row[4]<$pricef)
+                        {
+                            echo "<div id='display-card'>";
+                                echo '<Div class="card " style="width: 18rem;">';
+                                    echo '<img src="resources/cc.jpg" alt="image">';
+                                    echo '<div class="card-body">';
+                                        echo '<h5 class="card-title"> '.$row[1].' </h5>';
+                                        echo '<p class="card-text">'.$row[9].'<br> Price :- '.$row[4].'</p> ';
+                                        echo '<a href="bookpage.php?id='.$row[0].'"  name="book_id" class="btn btn-primary">Details</a>';
+                                        echo "</form>";
+                                    echo '</div>';
+                                echo '</Div>';
                             echo '</div>';
-                        echo '</Div>';
-                    echo '</div>';
-                    $i++;
+                            $i++;
+                        } 
+                        else
+                        {                            
+                            echo "<div id='display-card'>";
+                            echo '<div class="card" style="width: 40rem;">';
+                            echo '<div class="card-body " id="error">';
+                            echo  $search." not Found :( ";
+                            echo "</div>";
+                            echo "</div>";
+                            echo "</div>";
+                        }   
+                    }
                 }
+                else
+                {
+                    while ($row =pg_fetch_row($result) )
+                    {
+                        echo "<div id='display-card'>";
+                            echo '<Div class="card " style="width: 18rem;">';
+                                echo '<img src="resources/cc.jpg" alt="image">';
+                                echo '<div class="card-body">';
+                                    echo '<h5 class="card-title"> '.$row[1].' </h5>';
+                                    echo '<p class="card-text">'.$row[9].'<br> Publishing Year :- '.$row[6].'</p>';
+                                    echo '<a href="bookpage.php?id='.$row[0].'"  name="book_id" class="btn btn-primary">Details</a>';
+                                    echo "</form>";
+                                echo '</div>';
+                            echo '</Div>';
+                        echo '</div>';
+                        $i++;
+                    }
+                }    
             ?>
         </div>
     </section>
@@ -294,6 +358,23 @@
         dd_main.addEventListener("click", function(){
             this.classList.toggle("active");
             })
+        function updateTextInput(val) 
+        {
+            document.getElementById('value').innerHTML=val; 
+            let a="searchpage.php?search=<?php echo $search;?>&price=";
+            let result=a.concat(val);
+            document.getElementById('search').value="<?php echo $search;?>";
+            document.getElementById('price').href=result;
+        }
+        
+        
+    </script>
+    <script type="text/javascript">
+        function search()
+        {
+            document.getElementById('search').value="<?php echo $search;?>";
+            
+        }    
     </script>
 </body>
 </html>

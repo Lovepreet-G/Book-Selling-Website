@@ -30,7 +30,7 @@
       <h2>Sell your Book</h2>
   </div>
 <div class="d-flex">
-  <form action="sell_process.php" method="post">
+  <form action="sell_process.php" method="post" enctype='multipart/form-data'>
     <label>
       <span class="bname">Book Name <span class="required">*</span></span>
       <input type="text" name="bname" value="" required>

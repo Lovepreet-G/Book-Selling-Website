@@ -228,7 +228,7 @@
                 {
                     while ($row =pg_fetch_row($result) )
                     {
-                        if($row[4]>0 && $row[4]<$pricef)
+                        if($row[4]>0 && $row[4]<$pricef && $row[12]=='t'&& $row[11]>0)
                         {
                             echo "<div id='display-card'>";
                                 echo '<Div class="card " style="width: 18rem;">';
@@ -259,18 +259,22 @@
                 {
                     while ($row =pg_fetch_row($result) )
                     {
-                        echo "<div id='display-card'>";
-                            echo '<Div class="card " style="width: 18rem;">';
-                                echo '<img src="resources/cc.jpg" alt="image">';
-                                echo '<div class="card-body">';
-                                    echo '<h5 class="card-title"> '.$row[1].' </h5>';
-                                    echo '<p class="card-text">'.$row[9].'<br> Publishing Year :- '.$row[6].'</p>';
-                                    echo '<a href="bookpage.php?id='.$row[0].'"  name="book_id" class="btn btn-primary">Details</a>';
-                                    echo "</form>";
-                                echo '</div>';
-                            echo '</Div>';
-                        echo '</div>';
-                        $i++;
+                        if($row[12]=="t" && $row[4]>0 && $row[11]>0)
+                        {
+                            echo "<div id='display-card'>";
+                                echo '<Div class="card " style="width: 18rem;">';
+                                    echo '<img src="resources/cc.jpg" alt="image">';
+                                    echo '<div class="card-body">';
+                                        echo '<h5 class="card-title"> '.$row[1].' </h5>';
+                                        echo '<p class="card-text">'.$row[9].'<br> Publishing Year :- '.$row[6].'</p>';
+                                        echo '<a href="bookpage.php?id='.$row[0].'"  name="book_id" class="btn btn-primary">Details</a>';
+                                        echo "</form>";
+                                    echo '</div>';
+                                echo '</Div>';
+                            echo '</div>';
+                            $i++;
+                        }
+                        
                     }
                 }    
             ?>

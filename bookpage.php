@@ -39,6 +39,7 @@
             $course=$row[9];
             $pub_year=$row[6];
             $seller_id=$row[11];
+            $pub=$row[5];
         }
     }
 ?>
@@ -206,7 +207,7 @@
                 <img class="img-fluid w-100 pd-1" src="resources/cc.jpg" id="main-img" alt="image">
 
                 <div class="small-img-group">
-                    <div class="small-img-col">
+                    <!-- <div class="small-img-col">
                         <img class="small-img" src="resources/web.jpg" width="100%" alt="image">
                     </div>
                     <div class="small-img-col">
@@ -214,7 +215,7 @@
                     </div>
                     <div class="small-img-col">
                         <img class="small-img" src="resources/cc.jpg" width="100%" alt="image">
-                    </div>
+                    </div> -->
                     <!-- <div class="small-img-col">
                         <img class="small-img" src="resources/c.jpg" width="100%" alt="image">
                     </div> -->
@@ -223,7 +224,7 @@
             <div id="book-details" class="col-lg-6 col-md-12 col-12">
                     <h6>book</h6>
                     <h3 class="py-3"><?php echo $book_name; ?></h3>
-                    <h3 class="mb-3"><?php echo $book_price; ?></h3>
+                    <h3 class="mb-3">Rs <?php echo $book_price; ?></h3>
                     <?php
                     if(isset($user_id))
                     {
@@ -253,9 +254,8 @@
                     <span>
                     <?php echo $course; ?> <br> Publishing Year :- <?php echo $pub_year; ?>
                     </span>
-                    <h4 class="mt-4 mb-3">Seller Information </h4>
                     <span>
-                    <?php echo $seller_id; ?>
+                    <br>Publisher's Name :- <?php echo $pub; ?>
                     </span>
 
 
